@@ -1,13 +1,30 @@
 package com.hjh.model;
 
+import java.time.LocalDateTime;
+
 public class Member
 {
 	private long id;
 	private String email;
 	private String password;
 	private String name;
-	private String registerDateTime;
+	private LocalDateTime registerDateTime;
 	
+	public Member(String email, String password, String name, LocalDateTime registerDateTime)
+	{
+		super();
+		this.email = email;
+		this.password = password;
+		this.name = name;
+		this.registerDateTime = registerDateTime;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -26,10 +43,10 @@ public class Member
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRegisterDateTime() {
+	public LocalDateTime getRegisterDateTime() {
 		return registerDateTime;
 	}
-	public void setRegisterDateTime(String registerDateTime) {
+	public void setRegisterDateTime(LocalDateTime registerDateTime) {
 		this.registerDateTime = registerDateTime;
 	}
 	

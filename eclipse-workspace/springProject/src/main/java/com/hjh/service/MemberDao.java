@@ -13,4 +13,15 @@ public class MemberDao {
 	{
 		return map.get(email);
 	}
+	
+	public void insert(Member member)
+	{
+		member.setId(++nextId);
+		map.put(member.getEmail(), member);
+	}
+	
+	public void update(Member member)
+	{
+		map.put(member.getEmail(), member);
+	}
 }
