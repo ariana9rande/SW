@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection</title>
+    <script>
+        function testArray()
+        {
+            const myArray = [10, 20, 30];
+            myArray.push(40);
+            myArray[1] = 200;
+            // document.getElementById("print30").innerHTML = myArray[2];
+            // document.getElementById("printAll").innerHTML = myArray.toString();
+            console.log(myArray[2]);
+            for(let i = 0; i < myArray.length; i++)
+            //     document.getElementById("printAll").innerHTML += myArray[i] + " ";
+                console.log(myArray[i]);
+            
+        }
+
+        let myArray;
+
+        let create = function()
+        {
+            console.log("create");
+            myArray = [10, 20, 30];
+            console.log("myArray : " + myArray);
+        }
+
+        let add = function()
+        {
+            console.log("add");
+            myArray.push(40);
+        }
+
+        let update = function()
+        {
+            console.log("update");
+            myArray[1] = 200;
+        }
+
+        let detail = function()
+        {
+            console.log("detail");
+            console.log(myArray[2]);
+        }
+
+        let print = () =>
+        {
+            console.log("print");
+
+            for(let ele of myArray) // ele -> 배열의 element
+                console.log(ele);
+
+            for(let ele in myArray) // ele -> index 번호
+                console.log(ele, myArray[ele]);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="testArray()">testArray</button>
+    <p id="print30"></p>
+    <p id="printAll"></p>
+    <button onclick="create()">생성</button>
+    <button onclick="add()">추가</button>
+    <button onclick="update()">수정</button>
+    <button onclick="detail()">조건조회</button>
+    <button onclick="print()">전체조회</button>
+</body>
+</html>

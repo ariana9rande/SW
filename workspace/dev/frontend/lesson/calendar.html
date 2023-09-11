@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <script>
+        function makeCalendar() {
+            // alert('cal');
+            let temp1 = document.getElementById('year').value;
+            let temp2 = document.getElementById('month').value;
+            let year = parseInt(temp1);
+            let month = parseInt(temp2);
+
+            let date1 = new Date(year, month - 1, 1);
+            let space = date1.getDay();
+
+            let date2 = new Date(year, month, 0);
+            let lastDay = date2.getDate();
+
+            let myCalendar = "<table> <tr> <td class='day_red'>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td class='day_blue'>토</td> </tr>";
+
+            for(let i = 0; i < space; i++)
+                myCalendar += '<td></td>';
+
+            for (let day = 0; day < lastDay; day++) {
+                let flag = false;
+                if ((space + day + 1) % 7 == 0) {
+                    myCalendar += '<td>' + (day + 1) + '</td></tr><tr>';
+                    flag = true;
+                }
+                else
+                    myCalendar += '<td>' + (day + 1) + '</td>';
+            }
+            myCalendar += "</table>";
+            console.log(myCalendar);
+            let ele = document.getElementById('position');
+            ele.innerHTML = myCalendar;
+        }
+
+        function userData() {
+            let temp1 = document.getElementById('year').value;
+            let temp2 = document.getElementById('month').value;
+            let year = parseInt(temp1);
+            let month = parseInt(temp2);
+
+            console.log(year + month);
+        }
+
+        function checkDate() {
+            let today = new Date(2023, 8, 0);
+            console.log(today.getDate());
+            console.log(today.getDay());
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="year" size="5">년
+            </td>
+            <td>
+                <input type="text" id="month" size="3">월
+            </td>
+            <td>
+                <input type="button" value="달력" onclick="makeCalendar()">
+            </td>
+        </tr>
+        <tr>
+            <td id="position" colspan="3"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

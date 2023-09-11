@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script>
+        function handler()
+        {
+            // alert("javascript");
+            // console.log("javascript");
+            let ele = document.getElementById("demo");
+            ele.innerHTML = "<h1>using Javascript</h1>";
+        }
+
+        function test1()
+        {
+            let result = plus(3, 4);
+            console.log(result);
+        }
+
+        function test2()
+        {
+            console.log(sum());
+        }
+
+        function sum()
+        {
+            let sum = 0;
+            for(let i = 1; i <= 10; i++)
+            {
+                if(i % 2 == 0)
+                    sum += i;
+            }
+            return sum;
+        }
+
+        function plus(num1, num2)
+        {
+            return num1 + num2;
+        }
+
+        function output()
+        {
+            const values = [1, 2, 3, 4, 5];
+            for(let value of values)
+                console.log("value of values : " + value);
+
+            for(let i = 0; i < 5; i++)
+            {
+                console.log("values[i] : " + values[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="handler()">이벤트 소스</button>
+    <div id="demo">hello Javascript!</div>
+    <button onclick="test1()">함수1</button>
+    <button onclick="test2()">함수2</button>
+    <button onclick="output()">함수3</button>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{"members" :
+[
+    {"userId" : "admin", "userPwd" : "1111", "userName" : "teddy", "isAdmin" : true},
+    {"userId" : "user1", "userPwd" : "2222", "userName" : "eddy", "isAdmin" : false},
+    {"userId" : "user2", "userPwd" : "3333", "userName" : "emmy", "isAdmin" : false}
+]
+}

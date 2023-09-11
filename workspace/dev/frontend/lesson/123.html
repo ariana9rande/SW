@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkId()
+        {
+            document.getElementById("checked").innerHTML = "ID 체크";
+            let id = document.getElementById("id").value;
+            
+            if(isNaN(id[0]) && (id.length >= 8 && id.length <= 12))
+                document.getElementById("checkId()_result").innerHTML = "통과";
+            else
+                document.getElementById("checkId()_result").innerHTML = "불통";
+        }
+    </script>
+</head>
+<body>
+    ID : <input type="text" id="id">
+    <button onclick="checkId()">ID체크</button>
+    <p id="checked"></p>
+    <h5 id="checkId()_result"></h5>
+</body>
+</html>

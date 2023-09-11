@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mid Term</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        let members = [];
+        fetch("http://localhost:8080/")
+        .then(response => response.json())
+        .then(data =>
+        {
+            for(let member of data)
+                members.push(member);
+        })
+        .then(console.log(members));
+
+        function show(element)
+        {
+            element.style.display = "block";
+        }
+
+        function hide(element)
+        {
+            element.style.display = "none";
+        }
+
+        function join() {
+            hide(document.getElementById("loginDiv"));
+            show(document.getElementById("joinDiv"));
+        }
+
+        function joinConfirm()
+        {
+            joinId = document.getElementById("joinId").value;
+
+            if (findById(joinId) != null)
+            {
+                alert("id 중복");
+                document.getElementById("joinId").value = null;
+                document.getElementById("joinPwd").value = null;
+                document.getElementById("joinName").value = null;
+                document.getElementById("joinIsAdmin").checked = false;
+            }
+            else if (joinId == '')
+            {
+                alert("id를 입력해주세요");
+                document.getElementById("joinId").value = null;
+                document.getElementById("joinPwd").value = null;
+                document.getElementById("joinName").value = null;
+                document.getElementById("joinIsAdmin").checked = false;
+            }
+            else {
+                fetch('http://localhost:8080/',
+                    {
+                        method: "POST",
+                        headers:
+                        {
+                            "content-Type": "application/json",
+                        },
+                        body: JSON.stringify(
+                            {
+                                id: joinId,
+                                pwd: document.getElementById("joinPwd").value,
+                                name: document.getElementById("joinName").value,
+                                isAdmin: document.getElementById("joinIsAdmin").checked,
+                            })
+                    })
+                    .then(response => response.json())
+                    .then(data =>
+                    {
+                        let member = { id: data.id, pwd: data.pwd, name: data.name, isAdmin: data.isAdmin };
+                        members.push(member);
+                        document.getElementById("joinId").value = null;
+                        document.getElementById("joinPwd").value = null;
+                        document.getElementById("joinName").value = null;
+                        document.getElementById("joinIsAdmin").checked = false;
+                    })
+            }
+
+            hide(document.getElementById("joinDiv"));
+            show(document.getElementById("loginDiv"));
+        }
+
+        function login() {
+            let id = document.getElementById("loginId").value;
+            let pwd = document.getElementById("loginPwd").value;
+
+            hide(document.getElementById("loginDiv"));
+
+            let member = findById(id);
+
+            if(member != null && member.pwd == pwd)
+            {
+                if(member.isAdmin)
+                {
+                    showMemberList();
+                }
+                else
+                {
+                    document.getElementById('greeting').innerText =
+                        id + '님 반갑습니다.';
+                    show(document.getElementById("loginedDiv_notAdmin"));
+                }
+                loginedUser = findById(id);
+            }
+            else
+                show(document.getElementById("loginFailed"));
+        }
+
+        function logout() {
+            loginedUser = null;
+            document.getElementById("loginId").value = null;
+            document.getElementById("loginPwd").value = null;
+
+            hide(document.getElementById("loginedDiv_admin"));
+            hide(document.getElementById("loginedDiv_notAdmin"));
+            show(document.getElementById("loginDiv"));
+        }
+
+        function update() {
+            hide(document.getElementById("loginedDiv_notAdmin"));
+            
+            currentUser = loginedUser;
+            url = "http://localhost:8080/" + currentUser.id;
+            fetch(url)
+            .then(response => response.json())
+            .then(data =>
+            {
+                document.getElementById("updateId").value = data.id;
+                document.getElementById("updatePwd").value = data.pwd;
+                document.getElementById("updateName").value = data.name;
+                document.getElementById("updateIsAdmin").checked = data.isAdmin;
+            })
+            
+            show(document.getElementById("updateDiv"));
+        }
+
+        function updateConfirm()
+        {
+            url = "http://localhost:8080/" + currentUser.id;
+            fetch(url,
+            {
+                method: "PUT",
+                headers :
+                {
+                    "content-Type" : "application/json",
+                },
+                body : JSON.stringify (
+                {
+                    pwd : document.getElementById("updatePwd").value,
+                    name : document.getElementById("updateName").value,
+                    isAdmin : document.getElementById("updateIsAdmin").checked,
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+
+            hide(document.getElementById("updateDiv"));
+            show(document.getElementById("loginedDiv_notAdmin"));
+        }
+
+        function detail(id)
+        {
+            currentUser = findById(id);
+            
+            url = "http://localhost:8080/" + currentUser.id;
+            fetch(url)
+            .then(response => response.json())
+            .then(data =>
+            {
+                document.getElementById("detailId").value = data.id;
+                document.getElementById("detailPwd").value = data.pwd;
+                document.getElementById("detailName").value = data.name;
+                document.getElementById("detailIsAdmin").checked = data.isAdmin;
+            })
+
+            hide(document.getElementById("loginedDiv_admin"));
+            show(document.getElementById("detailDiv"));
+        }
+
+        function findById(id) {
+            for (let member of members) {
+                if (member.id == id)
+                    return member;
+            }
+            return null;
+        }
+
+        function whereById(id) {
+            for (let idx in members) {
+                if (members[idx].id == id)
+                    return idx;
+            }
+            return -1;
+        }
+
+        function remove(id) {
+            idx = whereById(id);
+
+            fetch("http://localhost:8080/" + members[idx],
+            {
+                method: "DELETE",
+            })
+            .then(response => response.json())
+            .then(data =>
+            {
+                console.log(data);
+            })
+            
+            members.splice(idx, 1);
+
+            
+            showMemberList();
+        }
+
+        function showMemberList()
+        {
+            hide(document.getElementById("detailDiv"));
+            show(document.getElementById("loginedDiv_admin"));
+
+            document.getElementById("loginedDiv_admin").innerHTML = 
+            '<button onclick="logout()">logout</button><br>';
+            let temp = "";
+            let i = 0;
+            for (let member of members)
+            {
+                temp += member.id + " " + member.name + " " + member.isAdmin + "<button onclick='detail( members[" + i + "].id )'>조회</button> <button onclick='remove(members[" + i + "].id)'>삭제</button><br>";
+                i++;
+            }
+            document.getElementById("loginedDiv_admin").innerHTML += temp;
+        }
+    </script>
+</head>
+<body>
+    <div id="loginDiv">
+        ID: <input type="text" id="loginId"><br>
+        PW: <input type="password" id="loginPwd"><br>
+        <button onclick="login()">로그인</button>
+        <button onclick="join()">회원가입</button>
+    </div>
+    <div id="joinDiv" hidden>
+        ID: <input type="text" id="joinId"><br>
+        PW: <input type="password" id="joinPwd"><br>
+        NAME: <input type="text" id="joinName"><br>
+        <input type="checkbox" id="joinIsAdmin" value="false">관리자입니다<br>
+        <button id="joinConfirmBtn" onclick="joinConfirm()">회원가입</button><br>
+    </div>
+    <div id="loginedDiv_admin" hidden>
+    </div>
+    <div id="loginedDiv_notAdmin" hidden>
+        <h1 id="greeting"></h1><br>
+        <button onclick="logout()">logout</button>
+        <button onclick="update()">update</button>
+    </div>
+    <div id="loginFailed" hidden>
+        <h3>id 또는 pwd가 잘못되었습니다.</h3>
+    </div>
+    <div id="detailDiv" hidden>
+        ID: <input type="text" id="detailId" disabled><br>
+        PW: <input type="password" id="detailPwd" disabled><br>
+        NAME: <input type="text" id="detailName" disabled><br>
+        <input type="checkbox" id="detailIsAdmin" value="false" checked disabled>관리자입니다<br>
+        <button onclick="showMemberList()">돌아가기</button>
+    </div>
+    <div id="updateDiv" hidden>
+        ID: <input type="text" id="updateId" disabled><br>
+        PW: <input type="password" id="updatePwd"><br>
+        NAME: <input type="text" id="updateName"><br>
+        <input type="checkbox" id="updateIsAdmin" value="false" checked>관리자입니다<br>
+        <button onclick="updateConfirm()">수정하기</button><br>
+    </div>
+    <div id="removeDiv" hidden></div>
+</body>
+</html>

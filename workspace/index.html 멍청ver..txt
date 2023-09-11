@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mid Term</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax
+                ({
+                    url: './data.json',
+                    success: function (data) {
+                        list = "";
+                        users = [];
+                        let i = 0;
+                        for (member of data.members) {
+                            let user = { userId: member.userId, userPwd: member.userPwd, userName: member.userName, isAdmin: member.isAdmin };
+                            list += member.userId + " " + member.userName + " " + member.isAdmin + "<button onclick='print(users[" + i + "].userId)'>조회</button> <button onclick='remove(users[" + i + "].userId)'>삭제</button><br>";
+                            users.push(user);
+                            i++;
+                        }
+
+                        //document.getElementById("listDiv").innerHTML = list;
+                    },
+                    error: function () {
+                        console.log('error');
+                    }
+                });
+        });
+
+        function join() {
+            document.getElementById("loginDiv").innerHTML = "";
+            document.getElementById("joinDiv").innerHTML =
+                'ID: <input type="text" id="userId"><br> ' +
+                'PW: <input type="password" id="userPwd"><br>' +
+                'NAME: <input type="text" id="userName"><br>' +
+                '<input type="checkbox" id="isAdmin" value="false">관리자입니다<br>' +
+                '<button id="joinConfirmBtn" onclick="joinConfirm()">회원가입</button><br>';
+        }
+
+        n = 3;
+        function joinConfirm() {
+            let id = document.getElementById("userId").value;
+            let pwd = document.getElementById("userPwd").value;
+            let name = document.getElementById("userName").value;
+            let isAdmin = document.getElementById("isAdmin");
+
+            if (isAdmin.checked)
+                isAdmin = true;
+            else
+                isAdmin = false;
+
+            if (findById(id) != null)
+                alert("id 중복");
+            else if (id == "")
+                alert("id를 입력해주세요");
+            else {
+                let user = { userId: id, userPwd: pwd, userName: name, isAdmin: isAdmin };
+                list += user.userId + " " + user.userName + " " + user.isAdmin + "<button onclick='print( users[" + n + "].userId )'>조회</button> <button onclick='remove(users[" + n + "].userId)'>삭제</button><br>";
+                users.push(user);
+                n++;
+            }
+
+
+            document.getElementById("joinDiv").innerHTML = "";
+            document.getElementById("loginDiv").innerHTML =
+                'ID: <input type="text" id="userId"><br>' +
+                'PW: <input type="password" id="userPwd"><br>' +
+                '<button onclick="login()">로그인</button>' +
+                '<button onclick="join()">회원가입</button>';
+        }
+
+        function login() {
+            let id = document.getElementById("userId").value;
+            let pwd = document.getElementById("userPwd").value;
+
+            document.getElementById("loginDiv").innerHTML = "";
+
+            console.log(users);
+
+            let check = false;
+
+            for (let user of users)
+                if (user.userId == id && user.userPwd == pwd) {
+                    if (user.userId == id && user.isAdmin == true) {
+                        showList();
+                    }
+                    else {
+                        document.getElementById("listDiv").innerHTML =
+                            '<h1>' + id + '님 반갑습니다.</h1><br>' +
+                            '<button onclick="logout()">logout</button>' +
+                            '<button onclick="update()">update</button>';
+                    }
+                    loginedUser = findById(id);
+                    check = true;
+                }
+                else if (check == false)
+                    document.getElementById("listDiv").innerHTML =
+                        '<h3>id 또는 pwd가 잘못되었습니다.</h3>';
+        }
+
+        function logout() {
+            loginedUser = null;
+            document.getElementById("listDiv").innerHTML = "";
+            document.getElementById("loginDiv").innerHTML =
+                'ID: <input type="text" id="userId"><br>' +
+                'PW: <input type="password" id="userPwd"><br>' +
+                '<button onclick="login()">로그인</button>' +
+                '<button onclick="join()">회원가입</button>';
+        }
+
+        function update() {
+            document.getElementById("listDiv").innerHTML = "";
+            currentUser = loginedUser;
+
+            if (currentUser.isAdmin)
+                checkbox = '<input type="checkbox" id="isAdmin" value="false" checked>관리자입니다<br>';
+            else
+                checkbox = '<input type="checkbox" id="isAdmin" value="false">관리자입니다<br>';
+
+            document.getElementById("printDiv").innerHTML =
+                'ID: <input type="text" id="userId"><br>' +
+                'PW: <input type="password" id="userPwd"><br>' +
+                'NAME: <input type="text" id="userName"><br>' +
+                checkbox +
+                '<button onclick="updateConfirm()">수정하기</button><br>';
+
+            document.getElementById("userId").value = currentUser.userId;
+            document.getElementById("userPwd").value = currentUser.userPwd;
+            document.getElementById("userName").value = currentUser.userName;
+        }
+
+        function updateConfirm() {
+            loginedUser.userId = document.getElementById("userId").value;
+            loginedUser.userPwd = document.getElementById("userPwd").value;
+            loginedUser.userName = document.getElementById("userName").value;
+            loginedUser.isAdmin = document.getElementById("isAdmin");
+
+            document.getElementById("printDiv").innerHTML = "";
+            document.getElementById("listDiv").innerHTML =
+                '<h1>' + loginedUser.userId + '님 반갑습니다.</h1><br>' +
+                '<button onclick="logout()">logout</button>' +
+                '<button onclick="update()">update</button>';
+
+            let idx = whereById(loginedUser.userId);
+
+            users[idx].userId = loginedUser.userId;
+            users[idx].userPwd = loginedUser.userPwd;
+            users[idx].userName = loginedUser.userName;
+            if (loginedUser.isAdmin.checked)
+                users[idx].isAdmin = true;
+            else
+                users[idx].isAdmin = false;
+            console.log(users);
+        }
+
+        function print(id) {
+            currentUser = findById(id);
+            document.getElementById("listDiv").innerHTML = "";
+            let checkbox = "";
+            if (currentUser.isAdmin)
+                checkbox = '<input type="checkbox" id="isAdmin" value="false" checked>관리자입니다<br>';
+            else
+                checkbox = '<input type="checkbox" id="isAdmin" value="false">관리자입니다<br>';
+
+            document.getElementById("printDiv").innerHTML =
+                'ID: <input type="text" id="userId"><br>' +
+                'PW: <input type="password" id="userPwd"><br>' +
+                'NAME: <input type="text" id="userName"><br>' +
+                checkbox +
+                '<button id="joinConfirmBtn" onclick="showList()">돌아가기</button><br>';
+
+            document.getElementById("userId").value = currentUser.userId;
+            document.getElementById("userPwd").value = currentUser.userPwd;
+            document.getElementById("userName").value = currentUser.userName;
+        }
+
+        function findById(id) {
+            for (let user of users) {
+                if (user.userId == id)
+                    return user;
+            }
+            return null;
+        }
+
+        function whereById(id) {
+            for (let idx in users) {
+                if (users[idx].userId == id)
+                    return idx;
+            }
+            return -1;
+        }
+
+        function remove(id) {
+            idx = whereById(id);
+
+            console.log(idx);
+            users.splice(idx, 1);
+
+            console.log(users);
+
+            showList();
+        }
+
+        function showList() {
+            document.getElementById("printDiv").innerHTML = "";
+            document.getElementById("listDiv").innerHTML =
+            '<button onclick="logout()">logout</button><br>';
+            let temp = "";
+            let i = 0;
+            for (let user of users) {
+                temp += user.userId + " " + user.userName + " " + user.isAdmin + "<button onclick='print( users[" + i + "].userId )'>조회</button> <button onclick='remove(users[" + i + "].userId)'>삭제</button><br>";
+                i++;
+            }
+            document.getElementById("listDiv").innerHTML += temp;
+        }
+    </script>
+</head>
+<body>
+    <div id="loginDiv">
+        ID: <input type="text" id="userId"><br>
+        PW: <input type="password" id="userPwd"><br>
+        <button onclick="login()">로그인</button>
+        <button onclick="join()">회원가입</button>
+    </div>
+    <div id="joinDiv"></div>
+    <div id="listDiv"></div>
+    <div id="printDiv"></div>
+    <div id="removeDiv"></div>
+</body>
+</html>

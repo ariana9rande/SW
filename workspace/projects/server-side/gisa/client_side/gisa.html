@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkAnswer()
+        {
+           fetch("/getData")
+           .then(response => response.json())
+           .then(data =>
+           {
+            console.log(data);
+            let dataHtml = "<ul>";
+                    data.forEach(item => {
+                        dataHtml += `<li>ID: ${item.id}, Name: ${item.name}</li>`;
+                    });
+                    dataHtml += "</ul>";
+                    dataContainer.innerHTML = dataHtml;
+           })        
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>문제</th>
+            <th>쿼리</th>
+            <th>결과</th>
+            <th>정답</th>
+        </tr>
+        <tr>
+            <td>1번</td>
+            <td>
+                <textarea id="query1" rows="8" cols="50"></textarea>
+                <button onclick="checkAnswer()">채점</button>
+            </td>
+            <td>aaaaaaaaa</td>
+            <td>bbbbbbbbb</td>
+        </tr>
+        <tr>
+            <td>2번</td>
+            <td>
+                <textarea id="query2" rows="8" cols="50"></textarea>
+                <button>채점</button>
+            </td>
+            <td>aaaaaaaaa</td>
+            <td>bbbbbbbbb</td>
+        </tr>
+        <tr>
+            <td>3번</td>
+            <td>
+                <textarea id="query3" rows="8" cols="50"></textarea>
+                <button>채점</button>
+            </td>
+            <td>aaaaaaaaa</td>
+            <td>bbbbbbbbb</td>
+        </tr>
+        <tr>
+            <td>4번</td>
+            <td>
+                <textarea id="query4" rows="8" cols="50"></textarea>
+                <button>채점</button>
+            </td>
+            <td>aaaaaaaaa</td>
+            <td>bbbbbbbbb</td>
+        </tr>
+
+    </table>
+    <br>
+</body>
+</html>
