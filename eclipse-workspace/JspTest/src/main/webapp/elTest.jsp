@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +12,8 @@
 		 \${100}: ${100}<br>
 		 \${"안녕하세요"}: ${"안녕하세요"}<br>
 		 \${10+1}: ${10+1}<br>
-		 \${"10"+1} : ${"10"+1 }<br>
-		\${null+10 }: ${null+10 }<br>
+		 \${"10"+1} : ${"10"+1}<br>
+		 \${null+10}: ${null+10}<br>
 		</h1>
 </body>
 </html>
