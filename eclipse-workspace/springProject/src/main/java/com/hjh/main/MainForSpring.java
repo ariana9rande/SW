@@ -43,11 +43,11 @@ public class MainForSpring
 			{
 				processChangeCommand(command.split(" "));
 			}
-			else if(command.equals("list"))
+			else if (command.equals("list"))
 			{
 				processListCommand();
+				continue;
 			}
-			printHelp();
 		}
 	}
 	
