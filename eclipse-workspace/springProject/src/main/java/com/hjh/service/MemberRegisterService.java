@@ -8,6 +8,11 @@ public class MemberRegisterService
 {
 	private MemberDao memberDao = new MemberDao();
 
+	public MemberRegisterService(MemberDao memberDao)
+	{
+		this.memberDao = memberDao;
+	}
+	
 	public long regist(RegisterRequest req)
 	{
 		Member member = memberDao.selectByEmail(req.getEmail());

@@ -2,6 +2,8 @@ package com.hjh.model;
 
 import java.time.LocalDateTime;
 
+import com.hjh.service.WrongIdPasswordException;
+
 public class Member
 {
 	private long id;
@@ -12,7 +14,6 @@ public class Member
 	
 	public Member(String email, String password, String name, LocalDateTime registerDateTime)
 	{
-		super();
 		this.email = email;
 		this.password = password;
 		this.name = name;
