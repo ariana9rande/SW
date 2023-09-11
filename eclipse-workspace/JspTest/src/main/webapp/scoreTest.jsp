@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" %>
 
 <%
     request.setCharacterEncoding("utf-8");
-    int score = Integer.parseInt(request.getParameter("score"))
+    int score = Integer.parseInt(request.getParameter("score"));
 %>
 <!DOCTYPE html>
 <html lang="en">
