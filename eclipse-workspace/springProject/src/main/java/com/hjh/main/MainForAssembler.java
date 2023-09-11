@@ -30,7 +30,8 @@ public class MainForAssembler
 			{
 				processNewCommand(command.split(" "));
 				continue;
-			} else if (command.startsWith("change "))
+			}
+			else if (command.startsWith("change "))
 			{
 				processChangeCommand(command.split(" "));
 			}
@@ -63,7 +64,8 @@ public class MainForAssembler
 		{
 			regSvc.regist(req);
 			System.out.println("등록했습니다.\n");
-		} catch (DuplicateMemberException e)
+		}
+		catch (DuplicateMemberException e)
 		{
 			System.out.println("이미 존재하는 이메일입니다.\n");
 		}
@@ -81,10 +83,12 @@ public class MainForAssembler
 		{
 			changePwdSvc.changePassword(arg[1], arg[2], arg[3]);
 			System.out.println("암호를 변경했습니다.\n");
-		} catch (MemberNotFoundException e)
+		}
+		catch (MemberNotFoundException e)
 		{
 			System.out.println("존재하지 않는 이메일입니다.\n");
-		} catch (WrongIdPasswordException e)
+		}
+		catch (WrongIdPasswordException e)
 		{
 			System.out.println("이메일과 암호가 일치하지 않습니다.\n");
 		}
