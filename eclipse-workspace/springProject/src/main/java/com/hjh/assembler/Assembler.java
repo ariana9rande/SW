@@ -13,7 +13,7 @@ public class Assembler
 	public Assembler()
 	{
 		memberDao = new MemberDao();
-		regSvc = new MemberRegisterService(memberDao);
+		regSvc = new MemberRegisterService();
 		pwdSvc = new ChangePasswordService();
 		pwdSvc.setMemberDao(memberDao);
 	}

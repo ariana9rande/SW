@@ -1,9 +1,14 @@
 package com.hjh.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.hjh.model.Member;
 
+@Component
 public class ChangePasswordService
 {
+	@Autowired
 	private MemberDao memberDao;
 	
 	public void changePassword(String email, String oldPwd, String newPwd)

@@ -1,59 +1,30 @@
 package com.hjh.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.hjh.service.ChangePasswordService;
-import com.hjh.service.MemberDao;
-import com.hjh.service.MemberInfoPrinter;
-import com.hjh.service.MemberListPrinter;
 import com.hjh.service.MemberPrinter;
-import com.hjh.service.MemberRegisterService;
+import com.hjh.service.MemberSummaryPrinter;
 import com.hjh.service.VersionPrinter;
 
 @Configuration
+@ComponentScan(basePackages = {"com.hjh.service"})
 public class AppCtx
 {
 	@Bean
-	public MemberDao memberDao()
-	{
-		return new MemberDao();
-	}
-	
-	@Bean
-	public MemberRegisterService memberRegSvc()
-	{
-		return new MemberRegisterService(memberDao());
-	}
-	
-	@Bean
-	public ChangePasswordService changePwdSvc()
-	{
-		ChangePasswordService pwdSvc =  new ChangePasswordService();
-		pwdSvc.setMemberDao(memberDao());
-		return pwdSvc;
-	}
-	
-	@Bean
-	public MemberPrinter memberPrinter()
+	@Qualifier("printer")
+	public MemberPrinter memberPrinter1()
 	{
 		return new MemberPrinter();
 	}
 	
 	@Bean
-	public MemberListPrinter listPrinter()
+	@Qualifier("summaryPrinter")
+	public MemberSummaryPrinter memberPrinter2()
 	{
-		return new MemberListPrinter(memberDao(), memberPrinter());
-	}
-	
-	
-	@Bean
-	public MemberInfoPrinter infoPrinter()
-	{
-		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-		infoPrinter.setMemberDao(memberDao());
-		infoPrinter.setPrinter(memberPrinter());
-		return infoPrinter;
+		return new MemberSummaryPrinter();
 	}
 	
 	@Bean

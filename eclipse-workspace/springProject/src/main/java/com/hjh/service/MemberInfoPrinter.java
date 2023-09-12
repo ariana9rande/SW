@@ -1,7 +1,12 @@
 package com.hjh.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import com.hjh.model.Member;
 
+@Component("infoPrinter")
 public class MemberInfoPrinter
 {
 	private MemberDao memberDao;
@@ -19,11 +24,14 @@ public class MemberInfoPrinter
 		System.out.println();
 	}
 
+	@Autowired
 	public void setMemberDao(MemberDao memberDao)
 	{
 		this.memberDao = memberDao;
 	}
 
+	@Autowired
+	@Qualifier("printer")
 	public void setPrinter(MemberPrinter printer)
 	{
 		this.printer = printer;

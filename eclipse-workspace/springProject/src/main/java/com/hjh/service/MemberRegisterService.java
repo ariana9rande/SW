@@ -2,15 +2,19 @@ package com.hjh.service;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.hjh.model.Member;
 
+@Component
 public class MemberRegisterService
 {
-	private MemberDao memberDao = new MemberDao();
+	@Autowired
+	private MemberDao memberDao;
 
-	public MemberRegisterService(MemberDao memberDao)
+	public MemberRegisterService()
 	{
-		this.memberDao = memberDao;
 	}
 	
 	public long regist(RegisterRequest req)
