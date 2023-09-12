@@ -5,9 +5,11 @@ import org.springframework.context.annotation.Configuration;
 
 import com.hjh.service.ChangePasswordService;
 import com.hjh.service.MemberDao;
+import com.hjh.service.MemberInfoPrinter;
 import com.hjh.service.MemberListPrinter;
 import com.hjh.service.MemberPrinter;
 import com.hjh.service.MemberRegisterService;
+import com.hjh.service.VersionPrinter;
 
 @Configuration
 public class AppCtx
@@ -42,5 +44,24 @@ public class AppCtx
 	public MemberListPrinter listPrinter()
 	{
 		return new MemberListPrinter(memberDao(), memberPrinter());
+	}
+	
+	
+	@Bean
+	public MemberInfoPrinter infoPrinter()
+	{
+		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
+		infoPrinter.setMemberDao(memberDao());
+		infoPrinter.setPrinter(memberPrinter());
+		return infoPrinter;
+	}
+	
+	@Bean
+	public VersionPrinter versionPrinter()
+	{
+		VersionPrinter versionPrinter = new VersionPrinter();
+		versionPrinter.setMajorVersion(5);
+		versionPrinter.setMinorVersion(0);
+		return versionPrinter;
 	}
 }
