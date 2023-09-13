@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.hjh.controller.BoardController;
+import com.hjh.controller.RestSvcController;
 import com.hjh.model.BoardDao;
 import com.hjh.model.NoticeboardDto;
 import com.hjh.service.BoardService;
@@ -33,5 +34,11 @@ public class BoardConfig
 	public BoardController boardController()
 	{
 		return new BoardController();
+	}
+	
+	@Bean
+	public RestSvcController restSvcController()
+	{
+		return new RestSvcController();
 	}
 }

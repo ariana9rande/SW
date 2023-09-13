@@ -2,6 +2,8 @@ package com.hjh.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,8 @@ import com.hjh.service.BoardService;
 @RequestMapping("/sku")
 public class BoardController
 {
+	Logger logger = LoggerFactory.getLogger("com.hjh.controller.BoardController");
+	
 	@Autowired
 	private BoardService boardService;
 	@Autowired
@@ -52,6 +56,8 @@ public class BoardController
 	@GetMapping("/view")
 	public ModelAndView viewArticle(@RequestParam(value="no") String articleNo)
 	{
+		logger.debug("======== " + articleNo);
+
 		noticeboardDto = boardService.viewArticle(Integer.parseInt(articleNo));
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
