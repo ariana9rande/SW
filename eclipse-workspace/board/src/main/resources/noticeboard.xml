@@ -13,4 +13,11 @@
 		select * from noticeboard order by write_date desc
 		]]>	
 	</select>
+	
+	<insert id="insertArticle" parameterType="noticeboardDto">
+		<![CDATA[
+		insert into noticeboard (title, content, write_date, write_id)
+		values(#{title}, #{content}, default, #{write_id})
+		]]>
+	</insert>
 </mapper>

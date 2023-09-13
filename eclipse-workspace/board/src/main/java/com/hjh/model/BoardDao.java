@@ -39,4 +39,12 @@ public class BoardDao
 		session.close();
 		return articleList;
 	}
+	
+	public void insertArticle(NoticeboardDto article)
+	{
+		sessionFactory = getInstance();
+		SqlSession session = sessionFactory.openSession();
+		session.insert("mapper.notice.insertArticle", article);
+		session.commit();
+	}
 }

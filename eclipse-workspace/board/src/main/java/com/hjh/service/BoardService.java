@@ -17,4 +17,9 @@ public class BoardService
 		List<NoticeboardDto> articleList = boardDao.selectAllArticles();
 		return articleList;
 	}
+	
+	public void addArticle(NoticeboardDto article)
+	{
+		boardDao.insertArticle(article);
+	}
 }
