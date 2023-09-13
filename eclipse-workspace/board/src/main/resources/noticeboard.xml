@@ -32,4 +32,10 @@
 			update noticeboard set title = #{title}, content = #{content} where article_no = #{article_no}
 		]]>
 	</update>
+	
+	<delete id="deleteArticle" parameterType="int">
+		<![CDATA[
+			delete from noticeboard where article_no = #{article_no}
+		]]>
+	</delete>
 </mapper>

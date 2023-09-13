@@ -65,4 +65,12 @@ public class BoardDao
 		session.update("mapper.notice.updateArticle", article);
 		session.commit();
 	}
+	
+	public void deleteArticle(int articleNo)
+	{
+		sessionFactory = getInstance();
+		SqlSession session = sessionFactory.openSession();
+		session.delete("mapper.notice.deleteArticle", articleNo);
+		session.commit();
+	}
 }

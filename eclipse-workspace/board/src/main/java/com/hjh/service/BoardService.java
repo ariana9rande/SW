@@ -33,4 +33,9 @@ public class BoardService
 	{
 		boardDao.updateArticle(article);
 	}
+	
+	public void removeArticle(int articleNo)
+	{
+		boardDao.deleteArticle(articleNo);
+	}
 }

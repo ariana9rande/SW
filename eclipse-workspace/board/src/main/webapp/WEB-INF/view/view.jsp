@@ -36,6 +36,12 @@ request.setCharacterEncoding("UTF-8");
         	frm.action="${contextPath}/sku/edit";
         	frm.submit();
         }
+        
+        function fn_delete_article(frm)
+        {
+        	frm.action = "${contextPath}/sku/delete";
+        	frm.submit();
+        }
     </script>
 </head>
 <body>
@@ -78,7 +84,7 @@ request.setCharacterEncoding("UTF-8");
                 <tr id="tr_btn">
                 	<td colspan="2" align="center">
                         <input type="button" value="수정" onclick="fn_enable()">
-                        <input type="button" value="삭제" onclick="">
+                        <input type="button" value="삭제" onclick="fn_delete_article(articleForm)">
                         <input type="button" value="목록보기" onclick="backToList(articleForm)">
                 	</td>
                 </tr>

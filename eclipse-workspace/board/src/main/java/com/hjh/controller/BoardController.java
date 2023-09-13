@@ -74,4 +74,11 @@ public class BoardController
 		return "redirect:view";
 	}
 	
+	@PostMapping("/delete")
+	public String deleteArticle(@RequestParam(value="articleNo") String articleNo)
+	{
+		boardService.removeArticle(Integer.parseInt(articleNo));
+		
+		return "redirect:list";
+	}
 }
