@@ -47,4 +47,22 @@ public class BoardDao
 		session.insert("mapper.notice.insertArticle", article);
 		session.commit();
 	}
+	
+	public NoticeboardDto selectArticle(int articleNo)
+	{
+		sessionFactory = getInstance();
+		SqlSession session = sessionFactory.openSession();
+		NoticeboardDto article = session.selectOne("mapper.notice.selectArticle", articleNo);
+		session.close();
+		
+		return article;
+	}
+	
+	public void updateArticle(NoticeboardDto article)
+	{
+		sessionFactory = getInstance();
+		SqlSession session = sessionFactory.openSession();
+		session.update("mapper.notice.updateArticle", article);
+		session.commit();
+	}
 }

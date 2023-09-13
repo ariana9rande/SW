@@ -22,4 +22,15 @@ public class BoardService
 	{
 		boardDao.insertArticle(article);
 	}
+	
+	public NoticeboardDto viewArticle(int articleNo)
+	{
+		NoticeboardDto article = boardDao.selectArticle(articleNo);
+		return article;
+	}
+	
+	public void editArticle(NoticeboardDto article)
+	{
+		boardDao.updateArticle(article);
+	}
 }

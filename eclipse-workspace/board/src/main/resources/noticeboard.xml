@@ -10,14 +10,26 @@
 	</resultMap>
 	<select id="selectAllArticles" resultMap="noticeResult">
 		<![CDATA[
-		select * from noticeboard order by write_date desc
+			select * from noticeboard order by write_date desc
 		]]>	
 	</select>
 	
 	<insert id="insertArticle" parameterType="noticeboardDto">
 		<![CDATA[
-		insert into noticeboard (title, content, write_date, write_id)
-		values(#{title}, #{content}, default, #{write_id})
+			insert into noticeboard (title, content, write_date, write_id)
+			values(#{title}, #{content}, default, #{write_id})
 		]]>
 	</insert>
+	
+	<select id="selectArticle" resultType="noticeboardDto" parameterType="int">
+		<![CDATA[
+			select * from noticeboard where article_no = #{article_no}
+		]]>
+	</select>
+	
+	<update id="updateArticle" parameterType="noticeboardDto">
+		<![CDATA[
+			update noticeboard set title = #{title}, content = #{content} where article_no = #{article_no}
+		]]>
+	</update>
 </mapper>

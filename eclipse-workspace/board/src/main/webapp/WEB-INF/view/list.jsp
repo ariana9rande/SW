@@ -50,7 +50,11 @@ request.setCharacterEncoding("UTF-8");
 						<tr align="center">
 							<td width="5%">${articleNum.count}</td>
 							<td width="10%">${article.write_id}</td>
-							<td align="left" width="35%">${article.title}</td>
+							<td align="left" width="35%">
+								<span style="padding-right: 30px;"></span>
+								<a class="cls1"
+								href="${contextPath}/sku/view?no=${article.article_no}">${article.title}</a>
+							</td>
 							<td width="10%">${article.write_date}</td>
 						</tr>
 					</c:forEach>

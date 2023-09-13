@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hjh.model.NoticeboardDto;
 import com.hjh.service.BoardService;
@@ -37,12 +39,39 @@ public class BoardController
 	}
 	
 	@PostMapping("/addarticle")
-	public String addArticle(@RequestParam(value="i_title") String title, @RequestParam(value="i_content")String content)
+	public String addArticle(@RequestParam(value="i_title") String title, @RequestParam(value="i_content") String content)
 	{
 		noticeboardDto.setTitle(title);
 		noticeboardDto.setContent(content);
 		noticeboardDto.setWrite_id("admin");
 		boardService.addArticle(noticeboardDto);
+		
 		return "redirect:list";
 	}
+	
+	@GetMapping("/view")
+	public ModelAndView viewArticle(@RequestParam(value="no") String articleNo)
+	{
+		noticeboardDto = boardService.viewArticle(Integer.parseInt(articleNo));
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("view");
+		mv.addObject("article", noticeboardDto);
+		return mv;
+	}
+	
+	@PostMapping("/edit")
+	public String editArticle(@RequestParam(value="articleNo") String articleNo,
+			@RequestParam(value="title") String title,
+			@RequestParam(value="content") String content, RedirectAttributes attr)
+	{
+		noticeboardDto.setArticle_no(Integer.parseInt(articleNo));
+		noticeboardDto.setTitle(title);
+		noticeboardDto.setContent(content);
+		
+		boardService.editArticle(noticeboardDto);
+		attr.addAttribute("no", articleNo);
+		
+		return "redirect:view";
+	}
+	
 }
