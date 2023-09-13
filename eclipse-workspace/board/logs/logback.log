@@ -22,3 +22,112 @@
 				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
 [2023-09-13 16:07:58:643][Catalina-utility-1] [INFO ]
 				o.s.web.servlet.DispatcherServlet - Completed initialization in 433 ms
+[2023-09-13 16:09:59:244][main] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:09:59:711][main] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 467 ms
+[2023-09-13 16:14:41:248][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:14:41:844][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 596 ms
+[2023-09-13 16:17:35:199][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:17:35:755][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 555 ms
+[2023-09-13 16:23:20:251][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:23:20:876][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 624 ms
+[2023-09-13 16:23:43:217][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:23:43:827][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 609 ms
+[2023-09-13 16:25:34:206][Catalina-utility-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:25:35:791][Catalina-utility-1] [WARN ]
+				o.s.w.c.s.AnnotationConfigWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restSvcController' defined in com.hjh.config.BoardConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hjh.controller.RestSvcController]: Factory method 'restSvcController' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error, insert "}" to complete ClassBody
+
+[2023-09-13 16:25:35:792][Catalina-utility-1] [ERROR]
+				o.s.web.servlet.DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restSvcController' defined in com.hjh.config.BoardConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hjh.controller.RestSvcController]: Factory method 'restSvcController' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error, insert "}" to complete ClassBody
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:702)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:716)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:591)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:530)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:170)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:143)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1106)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1063)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:960)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4641)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4948)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3581)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:309)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5276)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hjh.controller.RestSvcController]: Factory method 'restSvcController' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error, insert "}" to complete ClassBody
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 39 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	Syntax error, insert "}" to complete ClassBody
+
+	at com.hjh.controller.RestSvcController.<init>(RestSvcController.java:45)
+	at com.hjh.config.BoardConfig.restSvcController(BoardConfig.java:42)
+	at com.hjh.config.BoardConfig$$EnhancerBySpringCGLIB$$4498e287.CGLIB$restSvcController$3(<generated>)
+	at com.hjh.config.BoardConfig$$EnhancerBySpringCGLIB$$4498e287$$FastClassBySpringCGLIB$$bec8153.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.hjh.config.BoardConfig$$EnhancerBySpringCGLIB$$4498e287.restSvcController(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 40 common frames omitted
+[2023-09-13 16:25:46:235][Catalina-utility-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:25:47:818][Catalina-utility-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 583 ms
+[2023-09-13 16:27:14:228][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:27:15:805][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 576 ms
+[2023-09-13 16:27:37:232][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:27:38:844][Catalina-utility-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 611 ms
+[2023-09-13 16:27:50:213][Catalina-utility-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+[2023-09-13 16:27:50:807][Catalina-utility-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 594 ms
