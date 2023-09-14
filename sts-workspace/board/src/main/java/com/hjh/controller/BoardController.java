@@ -80,6 +80,7 @@ public class BoardController
 		boardService.editArticle(noticeboardDto);
 		attr.addAttribute("no", articleNo);
 		
+		
 		return "redirect:view";
 	}
 	

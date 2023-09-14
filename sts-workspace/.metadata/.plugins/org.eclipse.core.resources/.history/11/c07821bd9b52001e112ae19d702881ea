@@ -1,6 +1,0 @@
-package com.hjh.model;
-
-public interface BoardDao
-{
-
-}
