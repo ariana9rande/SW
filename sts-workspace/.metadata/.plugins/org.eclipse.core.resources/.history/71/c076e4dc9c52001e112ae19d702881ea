@@ -1,0 +1,8 @@
+package com.hjh.service;
+
+@Service
+@Transactional
+public class BoardService
+{
+
+}

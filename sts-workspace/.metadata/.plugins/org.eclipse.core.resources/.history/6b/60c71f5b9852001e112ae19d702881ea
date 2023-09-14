@@ -1,0 +1,6 @@
+package com.hjh.model;
+
+public class NoticeboardDto
+{
+
+}
