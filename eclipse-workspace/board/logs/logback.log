@@ -5037,3 +5037,19 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 [2023-09-14 14:22:12:2342][main] [INFO ]
 				com.hjh.BoardApplication - Started BoardApplication in 2.2 seconds (process running for 2.485)
+[2023-09-14 14:22:43:33328][http-nio-8080-exec-2] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-14 14:22:43:33328][http-nio-8080-exec-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-14 14:22:43:33330][http-nio-8080-exec-2] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[2023-09-14 14:22:43:33361][http-nio-8080-exec-2] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-14 14:22:43:33658][http-nio-8080-exec-2] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b565e18
+[2023-09-14 14:22:43:33660][http-nio-8080-exec-2] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-14 15:22:32:3623039][SpringApplicationShutdownHook] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-14 15:22:32:3623055][SpringApplicationShutdownHook] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
