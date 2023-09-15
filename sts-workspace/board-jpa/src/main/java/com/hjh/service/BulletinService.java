@@ -52,4 +52,9 @@ public class BulletinService
 			bulletinRepository.save(board);
 		}
 	}
+	
+	public void removeArticle(int articleNo) throws DataAccessException
+	{
+		bulletinRepository.deleteById(articleNo);
+	}
 }
