@@ -21,11 +21,13 @@ public class SecurityConfig
 		new AntPathRequestMatcher("/**")).permitAll()).sessionManagement(session -> session
 		.sessionCreationPolicy(SessionCreationPolicy.ALWAYS)).csrf((csrf) -> csrf
 		.ignoringRequestMatchers(new AntPathRequestMatcher("/**")))
-		.formLogin((formLogin) -> formLogin.loginPage("/user/login").defaultSuccessUrl("/sku/list"));
+		.formLogin((formLogin) -> formLogin.loginPage("/user/login").defaultSuccessUrl("/sku/list"))
+		.logout((logout) -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
+		.logoutSuccessUrl("/sku/list").invalidateHttpSession(true));
 
 		return http.build();
 	}
-	
+
 	@Bean
 	PasswordEncoder passwordEncoder()
 	{

@@ -60,7 +60,6 @@ INDEX VERSION 1.134+C:\Users\admin\hjh\sts-workspace\.metadata\.plugins\org.ecli
 1256598572.index
 357136276.index
 2788782407.index
-1056390846.index
 558363074.index
 1190627572.index
 3274112995.index
