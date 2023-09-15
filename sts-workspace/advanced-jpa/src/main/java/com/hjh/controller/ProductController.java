@@ -2,15 +2,15 @@ package com.hjh.controller;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.hjh.entity.Product;
 import com.hjh.service.ProductService;
 
-@RestController
+@Controller
 @RequestMapping("/product")
 public class ProductController
 {
@@ -22,7 +22,7 @@ public class ProductController
 		this.productService = productService;
 	}
 	
-	@GetMapping({"list", "/"})
+	@GetMapping({"/list", "/"})
 	public String productList(Model model)
 	{
 		List<Product> productList = productService.getProductList();

@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product List</title>
 </head>
 <body>
-    
+	<button th:onclick="@{/product/add}">추가</button>
+    <table align="center">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>created</th>
+            <th>name</th>
+            <th>price</th>
+            <th>stock</th>
+            <th>updated</th>
+        </tr>
+        </thead>
+        <tbody th:if="${#strings.isEmpty(products)}">
+            <tr>
+                <td>
+                    <p>no products</p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody th:unless="${#strings.isEmpty(products)}">
+            <tr th:each="product:${products}">
+                <td>[[${product.id}]]</td>
+                <td>[[${product.createdDate}]]</td>
+                <td>[[${product.name}]]</td>
+                <td>[[${product.price}]]</td>
+                <td>[[${product.stock}]]</td>
+                <td>[[${product.updatedDate}]]</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

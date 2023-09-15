@@ -10887,3 +10887,1403 @@ This generated password is for development use only. Your security configuration
 				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 [2023-09-15 16:46:52:54372][RMI TCP Connection(4)-127.0.0.1] [INFO ]
 				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 16:46:53:283][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 16:46:53:304][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 8976 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 16:46:53:305][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 16:46:54:587][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 16:46:54:612][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+[2023-09-15 16:46:54:894][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 16:46:54:898][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 16:46:54:899][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 16:46:54:899][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 16:46:54:943][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 16:46:54:943][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 618 ms
+[2023-09-15 16:46:54:1024][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 16:46:54:1046][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 16:46:54:1047][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 16:46:54:1103][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 16:46:54:1160][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 16:46:54:1171][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 16:46:54:1322][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d9428f3
+[2023-09-15 16:46:54:1323][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 16:46:55:1420][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 16:46:55:1730][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 16:46:55:1764][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 16:46:55:1898][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 16:46:55:1910][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ff98f537-305e-49e1-93eb-850b3edcc177
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 16:46:55:1963][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21457b14, org.springframework.security.web.session.ForceEagerSessionCreationFilter@7e484bd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e1ae693, org.springframework.security.web.context.SecurityContextHolderFilter@20a2930f, org.springframework.security.web.header.HeaderWriterFilter@759c53e5, org.springframework.security.web.csrf.CsrfFilter@6abaa14b, org.springframework.security.web.authentication.logout.LogoutFilter@25093079, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@36bd07ec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@147892be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13d1653, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e0600a4, org.springframework.security.web.session.SessionManagementFilter@2c02cf78, org.springframework.security.web.access.ExceptionTranslationFilter@1b83fac3, org.springframework.security.web.access.intercept.AuthorizationFilter@1013aa94]
+[2023-09-15 16:46:55:2060][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 16:46:55:2124][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 16:46:55:2183][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 16:46:55:2193][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 16:46:55:2199][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.13 seconds (process running for 2.486)
+[2023-09-15 17:09:07:1334222][RMI TCP Connection(25)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:09:07:1334236][RMI TCP Connection(25)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:09:07:1334236][RMI TCP Connection(25)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:09:07:1334239][RMI TCP Connection(25)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:09:07:1334242][RMI TCP Connection(25)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:09:07:1334243][RMI TCP Connection(25)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:09:07:1334249][RMI TCP Connection(25)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:09:10:275][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:09:10:295][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 3756 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:09:10:295][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:09:11:583][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:09:11:609][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:09:11:888][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:09:11:891][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:09:11:892][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:09:11:892][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:09:11:940][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:09:11:940][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 625 ms
+[2023-09-15 17:09:11:1029][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:09:11:1052][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:09:11:1054][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:09:11:1112][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:09:11:1170][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:09:11:1181][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:09:11:1339][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3caa4d85
+[2023-09-15 17:09:11:1340][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:09:12:1442][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:09:12:1766][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:09:12:1801][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:09:12:1941][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:09:12:1954][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0fcbf898-7939-47cb-8485-c19fac690ce4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:09:12:2011][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@689fcf08, org.springframework.security.web.session.ForceEagerSessionCreationFilter@738153d8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a3272e0, org.springframework.security.web.context.SecurityContextHolderFilter@14764fdd, org.springframework.security.web.header.HeaderWriterFilter@11b74ecb, org.springframework.security.web.csrf.CsrfFilter@147892be, org.springframework.security.web.authentication.logout.LogoutFilter@6e21c6ed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d01fa0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69e8f7a5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1013aa94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bc3c59f, org.springframework.security.web.session.SessionManagementFilter@25093079, org.springframework.security.web.access.ExceptionTranslationFilter@6ab6ec33, org.springframework.security.web.access.intercept.AuthorizationFilter@4eb3b690]
+[2023-09-15 17:09:12:2107][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:09:12:2175][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:09:12:2239][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:09:12:2250][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:09:12:2258][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.195 seconds (process running for 2.529)
+[2023-09-15 17:09:21:11090][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:09:21:11090][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:09:21:11091][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:11:16:125888][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:11:16:125896][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:11:16:125897][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:11:16:125897][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:11:16:125899][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:11:16:125901][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:11:16:125902][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:11:16:125907][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:11:18:284][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:11:18:305][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 15544 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:11:18:306][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:11:19:625][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:11:19:652][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:11:19:961][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:11:19:965][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:11:19:967][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:11:19:967][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:11:19:1017][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:11:19:1017][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 689 ms
+[2023-09-15 17:11:19:1108][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:11:19:1131][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:11:19:1132][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:11:19:1189][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:11:19:1251][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:11:19:1262][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:11:20:1422][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3caa4d85
+[2023-09-15 17:11:20:1423][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:11:20:1526][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:11:20:1852][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:11:20:1888][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:11:20:2031][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:11:20:2045][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 59673581-01fa-4965-8262-097d6853dd90
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:11:20:2102][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@689fcf08, org.springframework.security.web.session.ForceEagerSessionCreationFilter@738153d8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a3272e0, org.springframework.security.web.context.SecurityContextHolderFilter@14764fdd, org.springframework.security.web.header.HeaderWriterFilter@11b74ecb, org.springframework.security.web.csrf.CsrfFilter@147892be, org.springframework.security.web.authentication.logout.LogoutFilter@6e21c6ed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d01fa0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69e8f7a5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1013aa94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bc3c59f, org.springframework.security.web.session.SessionManagementFilter@25093079, org.springframework.security.web.access.ExceptionTranslationFilter@6ab6ec33, org.springframework.security.web.access.intercept.AuthorizationFilter@4eb3b690]
+[2023-09-15 17:11:20:2206][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:11:20:2278][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:11:20:2341][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:11:20:2353][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:11:21:2361][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.296 seconds (process running for 2.646)
+[2023-09-15 17:11:25:7184][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:11:25:7184][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:11:25:7185][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:12:43:85013][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:12:43:85022][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:12:43:85022][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:12:43:85023][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:12:43:85025][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:12:43:85027][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:12:43:85028][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:12:43:85029][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:12:43:85032][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:12:45:284][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:12:45:303][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 4852 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:12:45:303][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:12:46:600][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:12:46:627][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:12:46:917][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:12:46:921][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:12:46:922][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:12:46:922][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:12:46:973][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:12:46:974][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 649 ms
+[2023-09-15 17:12:46:1066][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:12:46:1090][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:12:46:1091][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:12:46:1148][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:12:46:1206][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:12:46:1218][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:12:47:1392][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3caa4d85
+[2023-09-15 17:12:47:1393][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:12:47:1504][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:12:47:1851][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:12:47:1889][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:12:47:2029][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:12:47:2047][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e208feab-b365-425f-ac3a-59cc44991dbe
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:12:47:2103][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75b6bd41, org.springframework.security.web.session.ForceEagerSessionCreationFilter@21457b14, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e484bd, org.springframework.security.web.context.SecurityContextHolderFilter@1a61f634, org.springframework.security.web.header.HeaderWriterFilter@1500edf3, org.springframework.security.web.csrf.CsrfFilter@1d0acb8f, org.springframework.security.web.authentication.logout.LogoutFilter@78839c2e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1013aa94, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@609edb55, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@147892be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e1ae693, org.springframework.security.web.session.SessionManagementFilter@28d37d43, org.springframework.security.web.access.ExceptionTranslationFilter@45430a27, org.springframework.security.web.access.intercept.AuthorizationFilter@69e8f7a5]
+[2023-09-15 17:12:47:2199][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:12:47:2270][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:12:47:2333][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:12:47:2344][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:12:47:2352][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.282 seconds (process running for 2.624)
+[2023-09-15 17:12:49:3524][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:12:49:3524][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:12:49:3525][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:14:03:78136][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:14:03:78146][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:03:78146][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:14:03:78147][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:14:03:78148][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:03:78151][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:14:03:78152][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:14:03:78155][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:14:06:274][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:14:06:296][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 2412 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:14:06:297][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:14:06:578][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:14:06:603][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:14:06:883][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:14:06:886][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:06:887][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:14:06:887][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:14:06:934][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:14:06:934][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 617 ms
+[2023-09-15 17:14:06:1018][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:14:06:1040][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:14:06:1041][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:14:06:1096][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:14:06:1153][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:14:06:1164][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:14:07:1320][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79295932
+[2023-09-15 17:14:07:1321][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:14:07:1423][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:14:07:1728][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:14:07:1762][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:14:07:1905][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:14:07:1919][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 23122532-2434-4f01-998e-389a3377c4a9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:14:07:1971][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@341141ab, org.springframework.security.web.session.ForceEagerSessionCreationFilter@1773faf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ef4a8fb, org.springframework.security.web.context.SecurityContextHolderFilter@3533d790, org.springframework.security.web.header.HeaderWriterFilter@29ebaf2f, org.springframework.security.web.csrf.CsrfFilter@5b27d03d, org.springframework.security.web.authentication.logout.LogoutFilter@14764fdd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@75b6bd41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73dc7db0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a3a6216, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30f99ca1, org.springframework.security.web.session.SessionManagementFilter@20a2930f, org.springframework.security.web.access.ExceptionTranslationFilter@2c02cf78, org.springframework.security.web.access.intercept.AuthorizationFilter@2b6a4da7]
+[2023-09-15 17:14:07:2068][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:14:07:2135][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:14:08:2198][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:08:2209][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:14:08:2216][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.151 seconds (process running for 2.485)
+[2023-09-15 17:14:23:18011][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:14:23:18012][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:14:23:18012][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2023-09-15 17:14:52:47112][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:14:52:47119][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:52:47119][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:14:52:47120][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:14:52:47121][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:52:47124][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:14:52:47125][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:14:52:47128][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:14:54:271][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:14:54:291][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 10664 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:14:54:292][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:14:54:584][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:14:54:609][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:14:54:889][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:14:54:893][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:54:894][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:14:54:894][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:14:54:947][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:14:54:947][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 634 ms
+[2023-09-15 17:14:54:1031][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:14:54:1052][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:14:54:1053][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:14:54:1107][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:14:55:1167][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:14:55:1178][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:14:55:1331][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3caa4d85
+[2023-09-15 17:14:55:1332][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:14:55:1438][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:14:55:1758][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:14:55:1795][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:14:55:1932][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:14:55:1946][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d16f99e6-f847-440e-b9f8-9f39e80ad03b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:14:55:1997][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75b6bd41, org.springframework.security.web.session.ForceEagerSessionCreationFilter@21457b14, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e484bd, org.springframework.security.web.context.SecurityContextHolderFilter@1a61f634, org.springframework.security.web.header.HeaderWriterFilter@1500edf3, org.springframework.security.web.csrf.CsrfFilter@1d0acb8f, org.springframework.security.web.authentication.logout.LogoutFilter@78839c2e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1013aa94, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@609edb55, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@147892be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e1ae693, org.springframework.security.web.session.SessionManagementFilter@28d37d43, org.springframework.security.web.access.ExceptionTranslationFilter@45430a27, org.springframework.security.web.access.intercept.AuthorizationFilter@69e8f7a5]
+[2023-09-15 17:14:55:2094][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:14:56:2167][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:14:56:2226][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:14:56:2236][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:14:56:2244][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.18 seconds (process running for 2.555)
+[2023-09-15 17:14:59:5531][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:14:59:5531][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:14:59:5532][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:18:05:191343][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:18:05:191352][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:05:191352][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:18:05:191353][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:18:05:191355][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:05:191356][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:05:191357][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:18:05:191358][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:18:05:191362][RMI TCP Connection(5)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:18:06:271][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:18:06:289][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 5916 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:18:06:290][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:18:06:574][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:18:06:599][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:18:07:869][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:18:07:873][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:07:874][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:18:07:874][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:18:07:928][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:18:07:929][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 619 ms
+[2023-09-15 17:18:07:1013][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:18:07:1034][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:18:07:1035][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:18:07:1091][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:18:07:1152][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:18:07:1162][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:18:07:1316][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3caa4d85
+[2023-09-15 17:18:07:1317][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:18:07:1421][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:18:08:1733][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:18:08:1767][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:18:08:1905][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:18:08:1919][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 34f289f0-ebe1-41bd-bc76-ace91f5c9b96
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:18:08:1973][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6db2a260, org.springframework.security.web.session.ForceEagerSessionCreationFilter@1454339d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1df8e685, org.springframework.security.web.context.SecurityContextHolderFilter@36bd07ec, org.springframework.security.web.header.HeaderWriterFilter@1c96bf1e, org.springframework.security.web.csrf.CsrfFilter@73dc7db0, org.springframework.security.web.authentication.logout.LogoutFilter@61c644fe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@47f4dc8d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26a004ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b6a4da7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78723798, org.springframework.security.web.session.SessionManagementFilter@14764fdd, org.springframework.security.web.access.ExceptionTranslationFilter@25093079, org.springframework.security.web.access.intercept.AuthorizationFilter@55b78dad]
+[2023-09-15 17:18:08:2067][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:18:08:2138][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:18:08:2195][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:08:2206][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:18:08:2212][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.149 seconds (process running for 2.486)
+[2023-09-15 17:18:10:4690][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:18:10:4690][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:18:10:4691][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:18:14:8154][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:18:14:8164][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:14:8164][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:18:14:8165][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:18:14:8167][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:14:8170][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:18:14:8171][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:18:14:8175][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:18:15:274][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:18:15:295][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 10788 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:18:15:296][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:18:16:608][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:18:16:634][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:18:16:919][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:18:16:923][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:16:924][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:18:16:924][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:18:16:975][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:18:16:975][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 657 ms
+[2023-09-15 17:18:16:1061][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:18:16:1082][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:18:16:1082][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:18:16:1137][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:18:16:1198][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:18:16:1209][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:18:16:1369][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3caa4d85
+[2023-09-15 17:18:16:1370][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:18:16:1472][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:18:17:1792][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:18:17:1826][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:18:17:1963][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:18:17:1976][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ba81e37a-77e7-4a88-8ef7-8bfa0bd9c791
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:18:17:2031][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@689fcf08, org.springframework.security.web.session.ForceEagerSessionCreationFilter@738153d8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a3272e0, org.springframework.security.web.context.SecurityContextHolderFilter@14764fdd, org.springframework.security.web.header.HeaderWriterFilter@11b74ecb, org.springframework.security.web.csrf.CsrfFilter@147892be, org.springframework.security.web.authentication.logout.LogoutFilter@6e21c6ed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d01fa0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69e8f7a5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1013aa94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bc3c59f, org.springframework.security.web.session.SessionManagementFilter@25093079, org.springframework.security.web.access.ExceptionTranslationFilter@6ab6ec33, org.springframework.security.web.access.intercept.AuthorizationFilter@4eb3b690]
+[2023-09-15 17:18:17:2129][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:18:17:2197][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:18:17:2257][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:17:2271][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:18:17:2279][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.214 seconds (process running for 2.555)
+[2023-09-15 17:18:23:8353][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:18:23:8354][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:18:23:8354][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2023-09-15 17:18:57:42106][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:18:57:42113][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:57:42113][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:18:57:42114][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:18:57:42116][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:57:42118][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:57:42119][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:18:57:42120][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:18:57:42124][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:18:58:277][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:18:58:298][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 12484 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:18:58:298][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:18:59:588][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:18:59:613][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:18:59:890][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:18:59:895][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:18:59:896][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:18:59:896][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:18:59:943][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:18:59:943][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 623 ms
+[2023-09-15 17:18:59:1027][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:18:59:1047][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:18:59:1048][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:18:59:1102][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:18:59:1159][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:18:59:1171][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:18:59:1326][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79295932
+[2023-09-15 17:18:59:1327][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:18:59:1430][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:19:00:1743][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:19:00:1775][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:19:00:1907][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:19:00:1919][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ec44da9d-991e-4aa4-b939-790b9e555af2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:19:00:1970][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@341141ab, org.springframework.security.web.session.ForceEagerSessionCreationFilter@1773faf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ef4a8fb, org.springframework.security.web.context.SecurityContextHolderFilter@3533d790, org.springframework.security.web.header.HeaderWriterFilter@29ebaf2f, org.springframework.security.web.csrf.CsrfFilter@5b27d03d, org.springframework.security.web.authentication.logout.LogoutFilter@14764fdd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@75b6bd41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73dc7db0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a3a6216, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30f99ca1, org.springframework.security.web.session.SessionManagementFilter@20a2930f, org.springframework.security.web.access.ExceptionTranslationFilter@2c02cf78, org.springframework.security.web.access.intercept.AuthorizationFilter@2b6a4da7]
+[2023-09-15 17:19:00:2071][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:19:00:2137][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:19:00:2195][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:00:2206][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:19:00:2212][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.151 seconds (process running for 2.481)
+[2023-09-15 17:19:07:8896][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:19:07:8896][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:19:07:8897][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:19:28:30179][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:19:28:30189][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:28:30189][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:19:28:30189][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:19:28:30191][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:28:30194][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:19:28:30194][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:19:28:30199][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:19:29:283][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:19:29:305][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 10092 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:19:29:305][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:19:30:597][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:19:30:624][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:19:30:903][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:19:30:908][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:30:909][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:19:30:909][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:19:30:957][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:19:30:958][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 631 ms
+[2023-09-15 17:19:30:1046][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:19:30:1069][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:19:30:1070][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:19:30:1128][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:19:30:1187][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:19:30:1198][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:19:31:1361][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79295932
+[2023-09-15 17:19:31:1362][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:19:31:1471][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:19:31:1787][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:19:31:1822][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:19:31:1968][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:19:31:1982][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a225d5cc-9d9c-4b12-84f9-2d4268bc9dec
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:19:31:2039][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@edb8f0c, org.springframework.security.web.session.ForceEagerSessionCreationFilter@6f70015, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d5fc340, org.springframework.security.web.context.SecurityContextHolderFilter@319ea996, org.springframework.security.web.header.HeaderWriterFilter@147892be, org.springframework.security.web.csrf.CsrfFilter@29811d4d, org.springframework.security.web.authentication.logout.LogoutFilter@36bd07ec, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e0600a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@dc24732, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44a1ae4e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@613f48de, org.springframework.security.web.session.SessionManagementFilter@3533d790, org.springframework.security.web.access.ExceptionTranslationFilter@20a2930f, org.springframework.security.web.access.intercept.AuthorizationFilter@7e1ae693]
+[2023-09-15 17:19:31:2138][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:19:31:2207][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:19:31:2268][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:31:2282][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:19:31:2289][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.218 seconds (process running for 2.577)
+[2023-09-15 17:19:36:7232][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:19:36:7232][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:19:36:7233][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:19:52:22668][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:19:52:22680][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:52:22680][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:19:52:22680][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:19:52:22682][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:52:22684][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:52:22685][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:19:52:22686][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:19:52:22691][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:19:53:269][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:19:53:290][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 12804 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:19:53:290][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:19:53:594][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:19:53:618][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:19:54:904][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:19:54:908][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:54:908][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:19:54:908][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:19:54:955][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:19:54:955][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 644 ms
+[2023-09-15 17:19:54:1038][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:19:54:1059][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:19:54:1059][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:19:54:1114][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:19:54:1170][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:19:54:1181][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:19:54:1335][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21c34bf8
+[2023-09-15 17:19:54:1336][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:19:54:1438][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:19:54:1749][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:19:55:1784][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:19:55:1920][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:19:55:1933][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a364893d-69f3-4335-a3e1-f4e5a176843c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:19:55:1987][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52b77d5e, org.springframework.security.web.session.ForceEagerSessionCreationFilter@6ab6ec33, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@594965c9, org.springframework.security.web.context.SecurityContextHolderFilter@4cc28ad0, org.springframework.security.web.header.HeaderWriterFilter@3b60be3, org.springframework.security.web.csrf.CsrfFilter@5cef5fc9, org.springframework.security.web.authentication.logout.LogoutFilter@23e1f610, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@193c810, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28f081ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56fc2cea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11b74ecb, org.springframework.security.web.session.SessionManagementFilter@64a8851a, org.springframework.security.web.access.ExceptionTranslationFilter@1d0acb8f, org.springframework.security.web.access.intercept.AuthorizationFilter@377d55]
+[2023-09-15 17:19:55:2085][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:19:55:2154][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:19:55:2213][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:19:55:2223][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:19:55:2230][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.169 seconds (process running for 2.506)
+[2023-09-15 17:19:58:4980][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:19:58:4980][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:19:58:4981][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:20:08:15062][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:20:08:15071][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:20:08:15072][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:20:08:15072][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:20:08:15074][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:20:08:15076][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:20:08:15077][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:20:08:15081][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:20:09:277][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:20:09:298][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 16036 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:20:09:298][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:20:09:605][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:20:09:630][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:20:10:901][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:20:10:905][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:20:10:906][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:20:10:906][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:20:10:959][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:20:10:959][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 640 ms
+[2023-09-15 17:20:10:1039][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:20:10:1059][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:20:10:1060][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:20:10:1114][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:20:10:1175][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:20:10:1185][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:20:10:1333][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@492c9892
+[2023-09-15 17:20:10:1334][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:20:10:1439][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:20:11:1746][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:20:11:1780][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:20:11:1915][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:20:11:1928][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ecb89185-f0c9-456c-9608-3881e21d8ddf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:20:11:1979][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7890324e, org.springframework.security.web.session.ForceEagerSessionCreationFilter@14764fdd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@402fdef1, org.springframework.security.web.context.SecurityContextHolderFilter@3f7bf0f6, org.springframework.security.web.header.HeaderWriterFilter@28f081ad, org.springframework.security.web.csrf.CsrfFilter@5418a659, org.springframework.security.web.authentication.logout.LogoutFilter@193c810, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@11b74ecb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b83fac3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1500edf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69e8f7a5, org.springframework.security.web.session.SessionManagementFilter@e30a8ef, org.springframework.security.web.access.ExceptionTranslationFilter@4cc28ad0, org.springframework.security.web.access.intercept.AuthorizationFilter@594965c9]
+[2023-09-15 17:20:11:2077][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:20:11:2143][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:20:11:2205][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:20:11:2215][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:20:11:2223][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.157 seconds (process running for 2.486)
+[2023-09-15 17:20:13:4094][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:20:13:4094][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:20:13:4095][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:21:23:74076][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:21:23:74085][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:21:23:74085][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:21:23:74086][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:21:23:74088][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:21:23:74089][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:21:23:74090][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:21:23:74091][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:21:23:74095][RMI TCP Connection(3)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:21:24:268][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:21:24:287][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 7044 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:21:24:288][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:21:24:586][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:21:24:611][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:21:25:881][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:21:25:885][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:21:25:886][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:21:25:886][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:21:25:933][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:21:25:933][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 626 ms
+[2023-09-15 17:21:25:1019][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:21:25:1040][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:21:25:1041][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:21:25:1096][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:21:25:1153][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:21:25:1163][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:21:25:1313][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@492c9892
+[2023-09-15 17:21:25:1315][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:21:25:1417][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:21:25:1719][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:21:25:1752][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:21:26:1883][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:21:26:1900][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 4220fa11-919f-4ca5-a323-03aea32d92b6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:21:26:1950][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1013aa94, org.springframework.security.web.session.ForceEagerSessionCreationFilter@36bd07ec, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@85b9f9c, org.springframework.security.web.context.SecurityContextHolderFilter@759c53e5, org.springframework.security.web.header.HeaderWriterFilter@3abb6aa, org.springframework.security.web.csrf.CsrfFilter@1259b2a5, org.springframework.security.web.authentication.logout.LogoutFilter@73476e2d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c96bf1e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c02cf78, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e7fc07e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26a004ed, org.springframework.security.web.session.SessionManagementFilter@3f7bf0f6, org.springframework.security.web.access.ExceptionTranslationFilter@e30a8ef, org.springframework.security.web.access.intercept.AuthorizationFilter@37fc7e3c]
+[2023-09-15 17:21:26:2046][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:21:26:2113][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:21:26:2177][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:21:26:2187][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:21:26:2194][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.133 seconds (process running for 2.453)
+[2023-09-15 17:21:29:5525][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:21:29:5525][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:21:29:5525][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2023-09-15 17:25:38:253924][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:25:38:253934][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:25:38:253934][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:25:38:253935][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:25:38:253937][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:25:38:253938][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:25:38:253939][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:25:38:253940][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:25:38:253945][RMI TCP Connection(7)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:25:40:281][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:25:40:301][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 11504 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:25:40:302][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:25:41:619][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:25:41:646][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:25:41:931][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:25:41:935][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:25:41:936][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:25:41:937][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:25:41:989][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:25:41:990][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 665 ms
+[2023-09-15 17:25:41:1078][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:25:41:1099][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:25:41:1100][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:25:41:1156][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:25:41:1217][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:25:41:1228][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:25:41:1396][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@fbbd90c
+[2023-09-15 17:25:41:1397][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:25:41:1501][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:25:42:1825][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:25:42:1857][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:25:42:1997][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:25:42:2011][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 645be2c1-770f-4718-92b9-fd27a1c6ac6d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:25:42:2067][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@d8751de, org.springframework.security.web.session.ForceEagerSessionCreationFilter@6e21c6ed, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75c30a4f, org.springframework.security.web.context.SecurityContextHolderFilter@193c810, org.springframework.security.web.header.HeaderWriterFilter@1a3a6216, org.springframework.security.web.csrf.CsrfFilter@3abb6aa, org.springframework.security.web.authentication.logout.LogoutFilter@21457b14, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@edb8f0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57edfa89, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c0bf8f4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@360e4235, org.springframework.security.web.session.SessionManagementFilter@1de398c3, org.springframework.security.web.access.ExceptionTranslationFilter@23e1f610, org.springframework.security.web.access.intercept.AuthorizationFilter@30f99ca1]
+[2023-09-15 17:25:42:2163][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:25:42:2234][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:25:42:2294][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:25:42:2305][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:25:42:2313][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.251 seconds (process running for 2.578)
+[2023-09-15 17:25:42:2485][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:25:42:2485][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:25:42:2486][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:26:06:26025][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:26:06:26036][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:06:26036][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:26:06:26036][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:26:06:26038][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:06:26040][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:06:26041][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:26:06:26042][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:26:06:26046][RMI TCP Connection(2)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:26:08:276][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:26:08:293][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 14868 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:26:08:294][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:26:08:567][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:26:08:590][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:26:09:851][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:26:09:855][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:09:856][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:26:09:856][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:26:09:903][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:26:09:904][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 590 ms
+[2023-09-15 17:26:09:988][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:26:09:1009][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:26:09:1010][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:26:09:1064][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:26:09:1120][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:26:09:1131][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:26:09:1284][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@492c9892
+[2023-09-15 17:26:09:1285][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:26:09:1387][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:26:09:1691][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:26:09:1741][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:26:10:1877][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:26:10:1890][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e3120f9a-1090-4ad4-8fd3-1dfca7cc3ee0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:26:10:1941][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7890324e, org.springframework.security.web.session.ForceEagerSessionCreationFilter@14764fdd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@402fdef1, org.springframework.security.web.context.SecurityContextHolderFilter@3f7bf0f6, org.springframework.security.web.header.HeaderWriterFilter@28f081ad, org.springframework.security.web.csrf.CsrfFilter@5418a659, org.springframework.security.web.authentication.logout.LogoutFilter@193c810, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@11b74ecb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b83fac3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1500edf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69e8f7a5, org.springframework.security.web.session.SessionManagementFilter@e30a8ef, org.springframework.security.web.access.ExceptionTranslationFilter@4cc28ad0, org.springframework.security.web.access.intercept.AuthorizationFilter@594965c9]
+[2023-09-15 17:26:10:2042][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:26:10:2108][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:26:10:2165][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:10:2175][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:26:10:2182][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.114 seconds (process running for 2.448)
+[2023-09-15 17:26:11:2786][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:26:11:2786][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:26:11:2787][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:26:55:46972][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:26:55:46982][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:55:46982][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:26:55:46982][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:26:55:46984][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:55:46985][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:55:46986][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:26:55:46987][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:26:55:46991][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2023-09-15 17:26:57:277][background-preinit] [INFO ]
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2023-09-15 17:26:57:298][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Starting AdvancedJpaApplication using Java 17.0.8.1 with PID 9808 (C:\Users\admin\hjh\sts-workspace\advanced-jpa\target\classes started by admin in C:\Users\admin\hjh\sts-workspace\advanced-jpa)
+[2023-09-15 17:26:57:299][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - No active profile set, falling back to 1 default profile: "default"
+[2023-09-15 17:26:57:593][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-09-15 17:26:57:618][main] [INFO ]
+				o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+[2023-09-15 17:26:58:912][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[2023-09-15 17:26:58:917][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:58:918][main] [INFO ]
+				o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2023-09-15 17:26:58:918][main] [INFO ]
+				o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+[2023-09-15 17:26:58:976][main] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2023-09-15 17:26:58:977][main] [INFO ]
+				o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 657 ms
+[2023-09-15 17:26:58:1056][main] [INFO ]
+				o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-09-15 17:26:58:1078][main] [INFO ]
+				org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+[2023-09-15 17:26:58:1079][main] [INFO ]
+				org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+[2023-09-15 17:26:58:1134][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:26:58:1194][main] [INFO ]
+				o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2023-09-15 17:26:58:1204][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2023-09-15 17:26:58:1353][main] [INFO ]
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@492c9892
+[2023-09-15 17:26:58:1354][main] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2023-09-15 17:26:58:1460][main] [INFO ]
+				o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+[2023-09-15 17:26:58:1772][main] [INFO ]
+				o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-09-15 17:26:59:1808][main] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:26:59:1943][main] [WARN ]
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-09-15 17:26:59:1955][main] [WARN ]
+				o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 85afae6e-7d9f-470f-91ca-64d79cdbafef
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2023-09-15 17:26:59:2011][main] [INFO ]
+				o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1d01fa0c, org.springframework.security.web.session.ForceEagerSessionCreationFilter@44bd7f24, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e3acd7, org.springframework.security.web.context.SecurityContextHolderFilter@78839c2e, org.springframework.security.web.header.HeaderWriterFilter@6c0bf8f4, org.springframework.security.web.csrf.CsrfFilter@3e7fc07e, org.springframework.security.web.authentication.logout.LogoutFilter@6f70015, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b0fc8b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37fc7e3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c96bf1e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55b78dad, org.springframework.security.web.session.SessionManagementFilter@52b77d5e, org.springframework.security.web.access.ExceptionTranslationFilter@1ef7e4c7, org.springframework.security.web.access.intercept.AuthorizationFilter@360e4235]
+[2023-09-15 17:26:59:2104][main] [INFO ]
+				o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[2023-09-15 17:26:59:2171][main] [WARN ]
+				o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+[2023-09-15 17:26:59:2236][main] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:26:59:2247][main] [INFO ]
+				o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[2023-09-15 17:26:59:2254][main] [INFO ]
+				com.hjh.AdvancedJpaApplication - Started AdvancedJpaApplication in 2.183 seconds (process running for 2.521)
+[2023-09-15 17:27:01:4280][http-nio-8080-exec-1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-15 17:27:01:4280][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-09-15 17:27:01:4281][http-nio-8080-exec-1] [INFO ]
+				o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2023-09-15 17:27:29:32217][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-15 17:27:29:32229][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:27:29:32229][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-15 17:27:29:32229][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-15 17:27:29:32231][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-15 17:27:29:32235][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-15 17:27:29:32236][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-15 17:27:29:32242][RMI TCP Connection(4)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.hjh.entity.Product;
@@ -23,7 +22,7 @@ public class ProductService
 	
 	public List<Product> getProductList()
 	{
-		List<Product> productList = productRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+		List<Product> productList = productRepository.findAll();
 		return productList;
 	}
 	
