@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +41,7 @@ public class BulletinController
 	}
 	
 	@GetMapping("/add")
+	@PreAuthorize("isAuthenticated()")
 	public String writeArticle()
 	{
 		return "write";
@@ -72,6 +74,7 @@ public class BulletinController
 	}
 	
 	@PostMapping("/edit")
+	@PreAuthorize("isAuthenticated()")
 	public String editArticle(@RequestParam(value="articleNo") String articleNo,
 			@RequestParam(value="title") String title,
 			@RequestParam(value="content") String content, RedirectAttributes attr)
@@ -90,6 +93,7 @@ public class BulletinController
 	}
 	
 	@PostMapping("/remove")
+	@PreAuthorize("isAuthenticated()")
 	public String deleteArticle(@RequestParam(value="articleNo") String articleNo)
 	{
 		bulletinService.removeArticle(Integer.parseInt(articleNo));
