@@ -20,7 +20,8 @@ public class SecurityConfig
 		http.authorizeHttpRequests(authorizeHttpRequest -> authorizeHttpRequest.requestMatchers(
 		new AntPathRequestMatcher("/**")).permitAll()).sessionManagement(session -> session
 		.sessionCreationPolicy(SessionCreationPolicy.ALWAYS)).csrf((csrf) -> csrf
-		.ignoringRequestMatchers(new AntPathRequestMatcher("/**")));
+		.ignoringRequestMatchers(new AntPathRequestMatcher("/**")))
+		.formLogin((formLogin) -> formLogin.loginPage("/user/login").defaultSuccessUrl("/sku/list"));
 
 		return http.build();
 	}
