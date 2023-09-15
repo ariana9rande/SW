@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+    <form th:action="@{/product/add}" method="post">
+        <div th:if="${param.error}">
+            <div>
+                추가 실패
+            </div>
+        </div>
+        <div>
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="price">가격</label>
+            <input type="text" name="price" id="price">
+        </div>
+        <div>
+            <label for="stock">수량</label>
+            <input type="text" name="stock" id="stock">
+        </div>
+        <input type="submit" value="등록">
+    </form>
+</body>
+</html>

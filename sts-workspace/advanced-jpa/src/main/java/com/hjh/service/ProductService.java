@@ -37,7 +37,7 @@ public class ProductService
 		return product;
 	}
 
-	public Product saveProduct(Product product)
+	public void saveProduct(Product product)
 	{
 		Product newProduct = new Product();
 		newProduct.setName(product.getName());
@@ -46,7 +46,7 @@ public class ProductService
 		newProduct.setCreatedDate(LocalDateTime.now());
 		newProduct.setUpdatedDate(LocalDateTime.now());
 		
-		return productDao.insertProduct(newProduct); 
+		productRepository.save(newProduct); 
 	}
 
 	public Product changeProductName(Long number, String name) throws Exception
