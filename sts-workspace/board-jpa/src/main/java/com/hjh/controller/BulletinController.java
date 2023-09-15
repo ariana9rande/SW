@@ -1,5 +1,6 @@
 package com.hjh.controller;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hjh.model.entity.Bulletin;
 import com.hjh.service.BulletinService;
+import com.hjh.service.UserService;
 
 @Controller
 @RequestMapping("/sku")
@@ -25,6 +27,9 @@ public class BulletinController
 	
 	@Autowired
 	private BulletinService bulletinService;
+	
+	@Autowired
+	UserService userService;
 	
 	@RequestMapping({"/list", "/"})
 	public String getArticleList(Model model)
@@ -41,13 +46,14 @@ public class BulletinController
 	}
 	
 	@PostMapping("/addarticle")
-	public String addArticle(@RequestParam(value="i_title") String title, @RequestParam(value="i_content") String content)
+	public String addArticle(@RequestParam(value="i_title") String title,
+			@RequestParam(value="i_content") String content, Principal principal)
 	{
 		Bulletin bulletin = new Bulletin();
 		
 		bulletin.setTitle(title);
 		bulletin.setContent(content);
-		bulletin.setWriter("admin");
+		bulletin.setWriter(userService.getUser(principal.getName()));
 		bulletinService.addArticle(bulletin);
 		
 		return "redirect:list";

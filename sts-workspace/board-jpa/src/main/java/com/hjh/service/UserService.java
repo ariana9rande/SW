@@ -1,5 +1,7 @@
 package com.hjh.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,5 +26,19 @@ public class UserService
 		userRepository.save(user);
 		
 		return user;
+	}
+	
+	public BoardUser getUser(String name)
+	{
+		Optional<BoardUser> boardUser = userRepository.findByUsername(name);
+		
+		if(boardUser.isPresent())
+		{
+			return boardUser.get();
+		}
+		else
+		{
+			throw new DataNotFoundException();
+		}
 	}
 }
