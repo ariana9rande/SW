@@ -23,13 +23,13 @@ public class SecurityConfiguration
                 .csrf(CsrfConfigurer::disable)
                 .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize ->
-                        authorize.requestMatchers("/sign-api/sign-in", "sign-api/sign-up", "/sign-api/exception")
+                        authorize.requestMatchers("/sign-api/sign-in", "/sign-api/sign-up", "sign-api/exception")
                                 .permitAll()
                                 .requestMatchers("**exception*").permitAll()
                                 .anyRequest().hasAnyRole("ADMIN"))
                 .exceptionHandling(authenticationManager -> authenticationManager
-                        .authenticationEntryPoint(new CustomAuthenticationEntrypoint())
-                        .accessDeniedHandler(new CustomAccessDeniedHandler()))
+                        .authenticationEntryPoint(new CustomAuthenticationEntrypoint()) //Authentication 과정에서 발생하는 예외처리
+                        .accessDeniedHandler(new CustomAccessDeniedHandler())) //Authorization 처리
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
                         UsernamePasswordAuthenticationFilter.class);
 

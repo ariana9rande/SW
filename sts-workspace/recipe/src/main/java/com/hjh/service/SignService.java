@@ -1,5 +1,6 @@
 package com.hjh.service;
 
+import com.hjh.common.CommonResponse;
 import com.hjh.model.dto.SignInResultDto;
 import com.hjh.model.dto.SignUpResultDto;
 import com.hjh.model.entity.User;
@@ -49,14 +50,14 @@ public class SignService
     {
         result.setSuccess(true);
         result.setCode(CommonResponse.SUCCESS.getCode());
-        result.setMas(CommonResponse.SUCCESS.getMsg());
+        result.setMsg(CommonResponse.SUCCESS.getMsg());
     }
 
     private void setFailResult(SignUpResultDto result)
     {
         result.setSuccess(false);
         result.setCode(CommonResponse.FAIL.getCode());
-        result.setMas(CommonResponse.FAIL.getMsg());
+        result.setMsg(CommonResponse.FAIL.getMsg());
     }
 
     public SignInResultDto signIn(String id, String password) throws RuntimeException
@@ -69,8 +70,8 @@ public class SignService
         }
 
         SignInResultDto signInResultDto = SignInResultDto.builder()
-                .token(jwtTokenProvider.createToken(user.getUid(), user.getRoles()))
-                .build();
+                        .token(jwtTokenProvider.createToken(user.getUid(), user.getRoles()))
+                                .build();
 
         setSuccessResult(signInResultDto);
 

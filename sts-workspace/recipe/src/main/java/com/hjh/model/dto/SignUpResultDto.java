@@ -13,5 +13,5 @@ public class SignUpResultDto
 {
     private boolean success;
     private int code;
-    private String mas;
+    private String msg;
 }
