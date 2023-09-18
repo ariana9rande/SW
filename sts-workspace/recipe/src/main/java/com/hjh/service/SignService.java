@@ -39,10 +39,12 @@ public class SignService
         if(!savedUser.getName().isEmpty())
         {
             setSuccessResult(signUpResultDto);
+
         } else
         {
             setFailResult(signUpResultDto);
         }
+
         return signUpResultDto;
     }
 
@@ -70,11 +72,12 @@ public class SignService
         }
 
         SignInResultDto signInResultDto = SignInResultDto.builder()
-                        .token(jwtTokenProvider.createToken(user.getUid(), user.getRoles()))
-                                .build();
+                .token(jwtTokenProvider.createToken(user.getUid(), user.getRoles()))
+                .build();
 
         setSuccessResult(signInResultDto);
 
         return signInResultDto;
     }
+
 }

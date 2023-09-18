@@ -28,6 +28,7 @@ public class SignController
         {
             System.out.println("정상 로그인 id: " + id + ", token: " + signInResultDto.getToken());
         }
+
         return signInResultDto;
     }
 
@@ -37,8 +38,9 @@ public class SignController
                                   @RequestParam(value = "name", required = true) String name,
                                   @RequestParam(value = "auth", required = true) String role)
     {
-        SignUpResultDto signUpResultDto;
-        return signService.signUp(id, password, name, role);
+
+        SignUpResultDto signUpResultDto = signService.signUp(id, password, name, role);
+        return signUpResultDto;
     }
 
     @GetMapping("/exception")
@@ -47,7 +49,6 @@ public class SignController
         throw new RuntimeException("접근 거부");
     }
 
-    @ExceptionHandler(RuntimeException.class)
     public Map<String, String> ExceptionHandler(RuntimeException e)
     {
         HttpHeaders responseHeaders = new HttpHeaders();
@@ -59,4 +60,5 @@ public class SignController
         map.put("message", "에러 발생");
         return map;
     }
+
 }
