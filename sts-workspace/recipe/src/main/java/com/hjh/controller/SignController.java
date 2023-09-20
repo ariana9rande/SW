@@ -60,5 +60,4 @@ public class SignController
         map.put("message", "에러 발생");
         return map;
     }
-
 }
