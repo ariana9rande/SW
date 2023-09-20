@@ -112,4 +112,10 @@ public class BulletinController
 		
 		return map;
 	}
+	
+	@GetMapping("/dogandcat")
+	public String upload() throws Exception
+	{
+		return "classifier";
+	}
 }
