@@ -1,31 +1,113 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>분류기</title>
+	<meta charset="UTF-8">
+	<title>분류기</title>
 </head>
-<script th:inline="javascript">
-    function loadimg(e)
-    {
-        const img_tag = document.querySelector('.fimg');
-        const file = e.currentTarget.files[0];
-        img_tag.src = URL.createObjectURL(file);
-        img_tag.style.visibility = 'visible';
-    }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--<script>
+	$(document).ready(function () {
+    // CSRF 토큰을 동적으로 설정
+    var csrf_token = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+
+    // 폼을 제출할 때 CSRF 토큰이 함께 전송되도록 설정
+    $("#form_file").submit(function (event) {
+        event.preventDefault();
+
+        // 폼 데이터 생성
+        var formData = new FormData($(this)[0]);
+
+        // CSRF 토큰을 폼 데이터에 추가
+        formData.append('csrfmiddlewaretoken', csrf_token);
+
+        // 이하 폼 제출 코드 작성
+        $.ajax({
+            url: 'localhost:8000/catdog/predict/',  // 서버 엔드포인트 URL을 여기에 입력
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                // 성공적으로 응답을 받았을 때 처리
+                // data는 서버에서 반환한 결과입니다.
+                console.log(data);
+
+                // 여기에서 결과를 원하는 대로 처리할 수 있습니다.
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                // 오류 발생 시 처리
+                console.error(xhr, textStatus, errorThrown);
+            }
+        });
+    });
+});
+</script>-->
+<script>
+	// 페이지 로드 시 CSRF 토큰을 가져오는 함수
+	function getCSRFToken() {
+		$.ajax({
+			url: 'http://localhost:8000/get-csrf-token/',  // CSRF 토큰을 가져올 API 엔드포인트 URL
+			type: 'GET',
+			success: function (data) {
+				const csrfToken = data.csrf_token;
+				// 가져온 토큰을 사용하여 요청을 보낼 수 있음
+				$('#submitButton').click(function () {
+					$.ajax({
+						url: 'http://localhost:8000/catdog/predict',  // 실제 데이터를 처리할 API 엔드포인트 URL
+						type: 'POST',
+						headers: {
+							'X-CSRFToken': csrfToken  // 요청 헤더에 CSRF 토큰을 추가
+						},
+						data: formData,
+						processData: false,
+						contentType: false,
+						success: function (data) {
+							// 성공적으로 응답을 받았을 때 처리
+							// data는 서버에서 반환한 결과입니다.
+							console.log(data);
+
+							// 여기에서 결과를 원하는 대로 처리할 수 있습니다.
+						},
+						error: function (xhr, textStatus, errorThrown) {
+							// 오류 발생 시 처리
+							console.error(xhr, textStatus, errorThrown);
+						}
+					});
+				});
+			},
+			error: function (error) {
+				console.error('Error:', error);
+			}
+		});
+	}
+
+	// 페이지 로드 시 CSRF 토큰을 가져오도록 호출
+	getCSRFToken();
 </script>
+<script th:inline="javascript">
+	function loadimg(e) {
+		const img_tag = document.querySelector('.fimg');
+		const file = e.currentTarget.files[0];
+		img_tag.src = URL.createObjectURL(file);
+		img_tag.style.visibility = 'visible';
+	}
+</script>
+
 <body>
-    <br>
-    <form method="post" id="form_file" th:action="@{/rest/uploadfile}" enctype="multipart/form-data">
-        <div style="vertical-align: top;">
-            <img class="fimg" width="150" height="150" src=""
-            style="visibility: hidden;">
-        </div>
-        <div>
-            <input type="text" id="result" value="결과값">
-            <input type="file" name="uploadfile" onchange="loadimg(event)">
-            <input type="submit" value="보내기">
-        </div>
-    </form>
+	<br>
+	<form method="post" id="form_file" th:action="@{/rest/uploadfile}" enctype="multipart/form-data">
+		<div style="vertical-align: top;">
+			<img class="fimg" width="150" height="150" src="" style="visibility: hidden;">
+		</div>
+		<div>
+			<input type="text" id="result" value="결과값">
+			<input type="file" name="uploadfile" onchange="loadimg(event)">
+			<input type="hidden" name="csrfmiddlewaretoken" id="csrf_token" value="">
+			<input type="submit" value="보내기">
+		</div>
+	</form>
 </body>
+
 </html>

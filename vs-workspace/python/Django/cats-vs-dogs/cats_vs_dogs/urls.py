@@ -1,8 +1,7 @@
 from django.urls import path
 from . import views
 
-app_name = "cats_vs_dogs"
-
 urlpatterns = [
-    path('predict/', views.CatOrDogView.as_view(), name='catordog'),
+    path('predict/', views.catordog, name='catordog'),
+    path('get-csrf-token/', views.get_csrf_token, name='get_csrf_token'),
 ]
