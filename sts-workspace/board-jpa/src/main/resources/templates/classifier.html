@@ -16,7 +16,7 @@
 </script>
 <body>
     <br>
-    <form method="post" id="form_file" action="" enctype="multipart/form-data">
+    <form method="post" id="form_file" th:action="@{/rest/uploadfile}" enctype="multipart/form-data">
         <div style="vertical-align: top;">
             <img class="fimg" width="150" height="150" src=""
             style="visibility: hidden;">
@@ -24,7 +24,7 @@
         <div>
             <input type="text" id="result" value="결과값">
             <input type="file" name="uploadfile" onchange="loadimg(event)">
-            <input type="button" value="보내기" onclick="">
+            <input type="submit" value="보내기">
         </div>
     </form>
 </body>

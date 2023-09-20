@@ -23,10 +23,11 @@ public class CatDogController
 	Map<String, String> map = new HashMap<>();
 
 	@PostMapping("/uploadfile")
-	public Map<String, String> uploadImage(@RequestPart(value = "uploadfile") MultipartFile uploadFile)
+	public Map<String, String> uploadImage(@RequestPart(value = "uploadfile") MultipartFile uploadfile)
 			throws IllegalStateException, IOException
 	{
-		String catordog = fileTransferService.webToLocal(uploadFile);
+		System.out.println("POST to uploadfile");
+		String catordog = fileTransferService.webToLocal(uploadfile);
 		map.put("catordog", catordog);
 		System.out.println(map);
 		

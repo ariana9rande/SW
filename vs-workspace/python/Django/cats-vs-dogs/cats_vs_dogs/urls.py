@@ -4,5 +4,5 @@ from . import views
 app_name = "cats_vs_dogs"
 
 urlpatterns = [
-    # path('predict/', views.catordog, name='image'),
+    path('predict/', views.CatOrDogView.as_view(), name='catordog'),
 ]
