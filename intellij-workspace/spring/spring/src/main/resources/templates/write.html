@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기</title>
+</head>
+<body>
+<form name="writeForm" method="post" th:action="@{/board/add}">
+    <table>
+        <tbody>
+        <tr>
+            <td align="right"">글제목</td>
+            <td colspan="2">
+                <input type="text" maxlength="100" name="title">
+            </td>
+        </tr>
+        <tr>
+            <td align="right" valign="top">
+                <br>글내용 :
+            </td>
+            <td colspan="2">
+                <textarea name="content" rows="10" maxlength="2000"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"></td>
+            <td colspan="2">
+                <input type="submit" value="저장">
+                <input type="button" value="목록보기" th:onclick="window.location.href='/board/list'">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

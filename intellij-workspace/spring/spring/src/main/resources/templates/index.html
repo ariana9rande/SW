@@ -5,7 +5,16 @@
     <title>Index</title>
 </head>
 <body>
-    <h1 align="center"><a th:href="@{/user/sign-up}">sign up</a></h1>
-    <h1 align="center"><a th:href="@{/user/sign-in}">sign in</a></h1>
+    <div style="float:right;" th:if="${session.loggedInUser}">
+        <p th:text="${session.loggedInUser.getName() + '님'}" style="display: inline;"></p>
+        <a th:href="@{/user/logout}" style="display: inline;">로그아웃</a>
+    </div>
+    <br>
+    <br>
+    <div>
+        <h1 align="center"><a th:href="@{/user/sign-up}">sign up</a></h1>
+        <h1 align="center"><a th:href="@{/user/sign-in}">sign in</a></h1>
+        <h1 align="center"><a th:href="@{/board/list}">board</a></h1>
+    </div>
 </body>
 </html>

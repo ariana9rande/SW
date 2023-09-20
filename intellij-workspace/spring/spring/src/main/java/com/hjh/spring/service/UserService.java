@@ -32,7 +32,6 @@ public class UserService
         userRepository.save(newUser);
     }
 
-
     public User findUserByName(String name)
     {
         return userRepository.findUserByName(name);

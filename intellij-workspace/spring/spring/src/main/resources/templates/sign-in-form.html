@@ -5,16 +5,19 @@
     <title>Sign in</title>
 </head>
 <body>
-<form th:action="@{user/sign-in}" method="post">
+<form th:action="@{/user/sign-in}" method="post">
     <div>
         <label for="name">id</label>
-        <input type="text" required>
+        <input type="text" name="name" required>
     </div>
     <div>
         <label for="password">pwd</label>
-        <input type="password">
+        <input type="password" name="password" required>
     </div>
     <button type="submit">로그인</button>
+    <div th:if="${error}">
+        <p th:text="${error}"></p>
+    </div>
 </form>
 </body>
 </html>

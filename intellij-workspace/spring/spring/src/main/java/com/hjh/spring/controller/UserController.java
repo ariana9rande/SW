@@ -2,6 +2,7 @@ package com.hjh.spring.controller;
 
 import com.hjh.spring.model.entity.User;
 import com.hjh.spring.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,11 +26,11 @@ public class UserController
 
     @PostMapping("/sign-up")
     public String signUp(Model model,
-                       @RequestParam(value="name") String name,
-                       @RequestParam(value="password") String password,
-                       @RequestParam(value="passwordConfirm") String passwordConfirm,
-                       @RequestParam(value="email") String email,
-                       @RequestParam(value="role") String role)
+                         @RequestParam(value = "name") String name,
+                         @RequestParam(value = "password") String password,
+                         @RequestParam(value = "passwordConfirm") String passwordConfirm,
+                         @RequestParam(value = "email") String email,
+                         @RequestParam(value = "role") String role)
     {
         if(userService.findUserByName(name) != null)
         {
@@ -59,5 +60,30 @@ public class UserController
     public String signInForm()
     {
         return "sign-in-form";
+    }
+
+    @PostMapping("/sign-in")
+    public String signIn(@RequestParam("name") String name,
+                         @RequestParam("password") String password,
+                         Model model, HttpSession session)
+    {
+        User user = userService.findUserByName(name);
+        if(user != null && user.getPassword().equals(password))
+        {
+            session.setAttribute("loggedInUser", user);
+            return "redirect:/";
+        }
+        else
+        {
+            model.addAttribute("error", "id 또는 pwd가 잘못되었습니다.");
+            return "sign-in-form";
+        }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session)
+    {
+        session.invalidate();
+        return "redirect:/";
     }
 }
