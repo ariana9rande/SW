@@ -1,9 +1,11 @@
 package com.hjh.spring.controller;
 
+import com.hjh.spring.model.entity.Comment;
 import com.hjh.spring.model.entity.Post;
 import com.hjh.spring.model.entity.User;
 import com.hjh.spring.service.CommentService;
 import com.hjh.spring.service.PostService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,6 +81,7 @@ public class PostController
         postService.viewArticle(id);
         model.addAttribute("article", postService.getArticleById(id));
         model.addAttribute("articleNo", articleNo);
+        model.addAttribute("commentList", commentService.getCommentListByPost(postService.getArticleById(id)));
 
         return "view";
     }
@@ -112,10 +115,26 @@ public class PostController
     }
 
     @PostMapping("/add-comment")
-        public String addComment(@RequestParam("commentContent") String content,
-                                 HttpSession session)
+    public String addComment(@RequestParam("commentContent") String content,
+                             HttpSession session, HttpServletRequest request,
+                             @RequestParam("id") Long postId)
     {
+        Comment comment = new Comment();
+        comment.setContent(content);
 
+        User loggedInUser = (User)session.getAttribute("loggedInUser");
+        comment.setWriter(loggedInUser.getName());
+
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = dateTime.format(formatter);
+        comment.setWriteDate(formattedDateTime);
+
+        comment.setPost(postService.getArticleById(postId));
+
+        commentService.addComment(comment);
+
+        return "redirect:" + request.getHeader("Referer");
     }
 
 }

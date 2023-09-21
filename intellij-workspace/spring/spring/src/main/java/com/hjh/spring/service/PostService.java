@@ -46,8 +46,6 @@ public class PostService
         postRepository.save(article);
     }
 
-
-
     public void editArticle(Post article)
     {
         postRepository.save(article);
