@@ -71,7 +71,7 @@ public class UserController
         if(user != null && user.getPassword().equals(password))
         {
             session.setAttribute("loggedInUser", user);
-            return "redirect:/";
+            return "redirect:/board/list";
         }
         else
         {

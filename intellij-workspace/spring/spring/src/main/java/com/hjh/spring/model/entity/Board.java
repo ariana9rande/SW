@@ -25,4 +25,6 @@ public class Board
     @Column(nullable = false)
     private String writeDate;
 
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private int viewCount;
 }

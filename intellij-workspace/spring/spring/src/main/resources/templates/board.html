@@ -2,39 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Board</title>
 </head>
 <body>
-    <table align="center" border="1">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">Home</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" th:if="${session.loggedInUser}">
+                <span class="nav-link text-dark" th:text="${session.loggedInUser.getName() + '님'}"></span>
+            </li>
+            <li class="nav-item" th:if="${session.loggedInUser}">
+                <a class="nav-link" th:href="@{/user/logout}">로그아웃</a>
+            </li>
+            <li class="nav-item" th:unless="${session.loggedInUser}">
+                <a class="nav-link" th:href="@{/user/sign-up}">Sign Up</a>
+            </li>
+            <li class="nav-item" th:unless="${session.loggedInUser}">
+                <a class="nav-link" th:href="@{/user/sign-in}">Sign In</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Board</h1>
+    <table class="table table-bordered table-striped">
         <thead>
-        <tr align="center" bgcolor="lightgreen">
+        <tr align="center">
             <th>글번호</th>
             <th>작성자</th>
             <th>제목</th>
             <th>작성일</th>
+            <th>조회수</th>
         </tr>
         </thead>
         <tbody th:if="${boardList.isEmpty()}">
-        <tr height="10">
-            <td colspan="4">
-                <p align="center">
-                    <b><span style="font-size: 9pt">등록된 글이 없습니다.</span></b>
-                </p>
+        <tr>
+            <td colspan="5">
+                <p class="text-center"><b><span style="font-size: 9pt">등록된 글이 없습니다.</span></b></p>
             </td>
         </tr>
         </tbody>
         <tbody th:unless="${boardList.isEmpty()}">
-        <tr align="center" th:each="article:${boardList}">
-            <td width="5%">[[${articleStat.count}]]</td>
-            <td width="10%">[[${article.writer.name}]]</td>
-            <td align="left" width="35%">
-                <span style="padding-right: 30px;"></span>
-                <a class="cls1" th:href="@{/board/view(no=${article.id})}">[[${article.title}]]</a>
+        <tr th:each="article : ${boardList}" align="center">
+            <td width="10%" th:text="${boardList.size() - articleStat.count + 1}"></td>
+            <td width="10%" th:text="${article.writer}"></td>
+            <td width="35%">
+                <a th:href="@{/board/view/{id}(id=${article.id})}" th:text="${article.title}"></a>
             </td>
-            <td width="10%">[[${article.writeDate}]]</td>
+            <td width="15%" th:text="${article.writeDate}"></td>
+            <td width="10%" th:text="${article.viewCount}"></td>
         </tr>
         </tbody>
     </table>
-    <h1 align="center"><a th:href="@{/board/add}">글쓰기</a></h1>
+    <div class="text-center">
+        <a class="btn btn-primary" th:href="@{/board/add}">글쓰기</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

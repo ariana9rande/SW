@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상세 조회</title>
+    <!-- 부트스트랩 CSS 링크 추가 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #tr_btn_modify
+        {
+            display: none;
+        }
+    </style>
+    <script th:inline="javascript">
+        function backToList(frm)
+        {
+            frm.action = /*[[@{/board/list}]]*/ "";
+            frm.submit();
+        }
+
+        function fn_enable()
+        {
+            document.querySelector('#title').disabled = false;
+            document.querySelector('#content').disabled = false;
+            document.querySelector('#tr_btn').style.display = 'none';
+            document.querySelector('#tr_btn_modify').style.display = 'table-row';
+        }
+
+        function fn_disable()
+        {
+            document.querySelector('#title').disabled = true;
+            document.querySelector('#content').disabled = true;
+            document.querySelector('#tr_btn').style.display = 'table-row';
+            document.querySelector('#tr_btn_modify').style.display = 'none';
+        }
+
+        function fn_modify_article(frm)
+        {
+            frm.action = /*[[@{/board/edit}]]*/ "";
+            frm.submit();
+        }
+
+        function fn_delete_article(frm)
+        {
+            frm.action = /*[[@{/board/remove}]]*/ "";
+            frm.submit();
+        }
+    </script>
+</head>
+<body>
+<div class="container mt-5">
+    <form name="articleForm" method="post" action="">
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td width="150" align="center">글번호</td>
+                <td>
+                    <input type="text" th:value="${article.id}" class="form-control" disabled>
+                    <input type="hidden" th:value="${article.id}" name="id">
+                </td>
+            </tr>
+            <tr>
+                <td width="150" align="center">작성자</td>
+                <td>
+                    <input type="text" th:value="${article.writer}" name="writer" class="form-control" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" align="center">제목</td>
+                <td>
+                    <input type="text" th:value="${article.title}" name="title"
+                           id="title" class="form-control" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td width="150" align="center">내용</td>
+                <td>
+                    <textarea rows="10" name="content"
+                              id="content" class="form-control" style="resize:none" disabled>[[${article.content}]]</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" align="center">작성일</td>
+                <td>
+                    <input type="text" th:value="${article.writeDate}" class="form-control" disabled>
+                </td>
+            </tr>
+            <tr id="tr_btn">
+                <td colspan="2" align="center">
+                    <input type="button" value="수정" onclick="fn_enable()" class="btn btn-primary">
+                    <input type="button" value="삭제" onclick="fn_delete_article(articleForm)" class="btn btn-danger">
+                    <a th:href="@{/board/list}" class="btn btn-secondary">목록보기</a>
+                </td>
+            </tr>
+            <tr id="tr_btn_modify">
+                <td colspan="2" align="center">
+                    <input type="button" value="저장" onclick="fn_modify_article(articleForm)" class="btn btn-primary">
+                    <input type="button" value="취소" onclick="fn_disable()" class="btn btn-secondary">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<!-- 부트스트랩 및 jQuery 스크립트 추가 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

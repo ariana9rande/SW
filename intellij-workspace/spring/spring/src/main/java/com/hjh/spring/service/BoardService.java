@@ -2,6 +2,7 @@ package com.hjh.spring.service;
 
 import com.hjh.spring.model.entity.Board;
 import com.hjh.spring.repository.BoardRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,19 +17,44 @@ public class BoardService
         this.boardRepository = boardRepository;
     }
 
-    public List<Board> boardList()
+    public List<Board> getBoardList()
     {
-        return boardRepository.findAll();
+        return boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
-    public void register(Board board)
+    public Board getArticleById(Long id)
     {
-        Board newBoard = new Board();
-        newBoard.setTitle(board.getTitle());
-        newBoard.setContent(board.getContent());
-        newBoard.setWriter(board.getWriter());
-        newBoard.setWriteDate(board.getWriteDate());
+        return boardRepository.findArticleById(id);
+    }
 
-        boardRepository.save(newBoard);
+    public void addArticle(Board article)
+    {
+        Board newArticle = new Board();
+        newArticle.setTitle(article.getTitle());
+        newArticle.setContent(article.getContent());
+        newArticle.setWriter(article.getWriter());
+        newArticle.setWriteDate(article.getWriteDate());
+
+        boardRepository.save(newArticle);
+    }
+
+    public void viewArticle(Long id)
+    {
+        Board article = boardRepository.findArticleById(id);
+
+        article.setViewCount(article.getViewCount() + 1);
+        boardRepository.save(article);
+    }
+
+
+
+    public void editArticle(Board article)
+    {
+        boardRepository.save(article);
+    }
+
+    public void removeArticle(Board article)
+    {
+        boardRepository.delete(article);
     }
 }
