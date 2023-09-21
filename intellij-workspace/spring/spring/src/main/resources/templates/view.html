@@ -6,44 +6,37 @@
     <!-- 부트스트랩 CSS 링크 추가 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        #tr_btn_modify
-        {
+        #tr_btn_modify {
             display: none;
         }
     </style>
     <script th:inline="javascript">
-        function backToList(frm)
-        {
-            frm.action = /*[[@{/board/list}]]*/ "";
-            frm.submit();
-        }
-
-        function fn_enable()
-        {
+        function fn_enable() {
             document.querySelector('#title').disabled = false;
             document.querySelector('#content').disabled = false;
             document.querySelector('#tr_btn').style.display = 'none';
             document.querySelector('#tr_btn_modify').style.display = 'table-row';
         }
 
-        function fn_disable()
-        {
+        function fn_disable() {
             document.querySelector('#title').disabled = true;
             document.querySelector('#content').disabled = true;
             document.querySelector('#tr_btn').style.display = 'table-row';
             document.querySelector('#tr_btn_modify').style.display = 'none';
         }
 
-        function fn_modify_article(frm)
-        {
+        function fn_modify_article(frm) {
             frm.action = /*[[@{/board/edit}]]*/ "";
             frm.submit();
         }
 
-        function fn_delete_article(frm)
-        {
+        function fn_delete_article(frm) {
             frm.action = /*[[@{/board/remove}]]*/ "";
             frm.submit();
+        }
+
+        function fn_enable_comment_form() {
+            document.querySelector('#commentForm').style.display = 'table-row';
         }
     </script>
 </head>
@@ -55,20 +48,20 @@
             <tr>
                 <td width="150" align="center">글번호</td>
                 <td>
-                    <input type="text" th:value="${article.id}" class="form-control" disabled>
-                    <input type="hidden" th:value="${article.id}" name="id">
+                    <input type="text" th:value="${articleNo}" class="form-control" disabled>
+                    <input type="hidden" th:value="${article.postId}" name="id">
                 </td>
             </tr>
             <tr>
                 <td width="150" align="center">작성자</td>
                 <td>
-                    <input type="text" th:value="${article.writer}" name="writer" class="form-control" disabled>
+                    <input type="text" th:value="${article.postWriter}" name="writer" class="form-control" disabled>
                 </td>
             </tr>
             <tr>
                 <td width="150" align="center">제목</td>
                 <td>
-                    <input type="text" th:value="${article.title}" name="title"
+                    <input type="text" th:value="${article.postTitle}" name="title"
                            id="title" class="form-control" disabled>
                 </td>
             </tr>
@@ -76,19 +69,22 @@
                 <td width="150" align="center">내용</td>
                 <td>
                     <textarea rows="10" name="content"
-                              id="content" class="form-control" style="resize:none" disabled>[[${article.content}]]</textarea>
+                              id="content" class="form-control" style="resize:none"
+                              disabled>[[${article.postContent}]]</textarea>
                 </td>
             </tr>
             <tr>
                 <td width="20%" align="center">작성일</td>
                 <td>
-                    <input type="text" th:value="${article.writeDate}" class="form-control" disabled>
+                    <input type="text" th:value="${article.postWriteDate}" class="form-control" disabled>
                 </td>
             </tr>
             <tr id="tr_btn">
                 <td colspan="2" align="center">
-                    <input type="button" value="수정" onclick="fn_enable()" class="btn btn-primary">
-                    <input type="button" value="삭제" onclick="fn_delete_article(articleForm)" class="btn btn-danger">
+                    <input type="button" value="수정" onclick="fn_enable()" class="btn btn-primary"
+                           th:if="${session.loggedInUser != null && (session.loggedInUser.role == 'admin' ||  session.loggedInUser.name == article.postWriter)}">
+                    <input type="button" value="삭제" onclick="fn_delete_article(articleForm)" class="btn btn-danger"
+                           th:if="${session.loggedInUser != null && (session.loggedInUser.role == 'admin' ||  session.loggedInUser.name == article.postWriter)}">
                     <a th:href="@{/board/list}" class="btn btn-secondary">목록보기</a>
                 </td>
             </tr>
@@ -97,6 +93,21 @@
                     <input type="button" value="저장" onclick="fn_modify_article(articleForm)" class="btn btn-primary">
                     <input type="button" value="취소" onclick="fn_disable()" class="btn btn-secondary">
                 </td>
+            </tr>
+            <tr th:if="${session.loggedInUser != null}">
+                <td colspan="2" align="center">
+                    <input type="button" value="댓글 쓰기" onclick="fn_enable_comment_form()"
+                           class="btn btn-primary"></input>
+                </td>
+            </tr>
+            <tr id="commentForm" style="display: none;">
+                <form th:action="@{/board/add-comment}" method="post">
+                    <td align="center">댓글 내용</td>
+                    <td align="center">
+                        <textarea rows="4" name="commentContent" class="form-control" style="resize: none;"></textarea>
+                        <button type="submit" class="btn btn-secondary">작성 완료</button>
+                    </td>
+                </form>
             </tr>
             </tbody>
         </table>

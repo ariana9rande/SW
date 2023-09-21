@@ -67,6 +67,9 @@ public class UserController
                          @RequestParam("password") String password,
                          Model model, HttpSession session)
     {
+        if(session.getAttribute("error") != null)
+            session.removeAttribute("error");
+
         User user = userService.findUserByName(name);
         if(user != null && user.getPassword().equals(password))
         {

@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Board</title>
+    <script th:inline="javascript">
+        const error = /*[[${session.error}]]*/"";
+
+        if (error)
+        {
+            alert(error);
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -39,21 +47,21 @@
             <th>조회수</th>
         </tr>
         </thead>
-        <tbody th:if="${boardList.isEmpty()}">
+        <tbody th:if="${postList.isEmpty()}">
         <tr>
             <td colspan="5">
                 <p class="text-center"><b><span style="font-size: 9pt">등록된 글이 없습니다.</span></b></p>
             </td>
         </tr>
         </tbody>
-        <tbody th:unless="${boardList.isEmpty()}">
-        <tr th:each="article : ${boardList}" align="center">
-            <td width="10%" th:text="${boardList.size() - articleStat.count + 1}"></td>
-            <td width="10%" th:text="${article.writer}"></td>
+        <tbody th:unless="${postList.isEmpty()}">
+        <tr th:each="article : ${postList}" align="center">
+            <td width="10%" th:text="${postList.size() - articleStat.count + 1}"></td>
+            <td width="10%" th:text="${article.postWriter}"></td>
             <td width="35%">
-                <a th:href="@{/board/view/{id}(id=${article.id})}" th:text="${article.title}"></a>
+                <a th:href="@{/board/view/{id}(id=${article.postId}, articleNo=${postList.size() - articleStat.count + 1})}" th:text="${article.postTitle}"></a>
             </td>
-            <td width="15%" th:text="${article.writeDate}"></td>
+            <td width="15%" th:text="${article.postWriteDate}"></td>
             <td width="10%" th:text="${article.viewCount}"></td>
         </tr>
         </tbody>

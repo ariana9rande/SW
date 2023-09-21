@@ -4,27 +4,33 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
-public class Board
+public class Post
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long postId;
 
     @Column(length = 50, nullable = false)
-    private String title;
+    private String postTitle;
 
     @Column(length = 2000, nullable = false)
-    private String content;
+    private String postContent;
 
     @Column(length = 20, nullable = false)
-    private String writer;
+    private String postWriter;
 
     @Column(nullable = false)
-    private String writeDate;
+    private String postWriteDate;
 
     @Column(nullable = false, columnDefinition = "int default 0")
     private int viewCount;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
 }
