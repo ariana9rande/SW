@@ -43,14 +43,15 @@ public class PostController
     }
 
     @GetMapping("/add")
-    public String writeForm(HttpSession session)
+    public String writeForm(HttpSession session,
+                            RedirectAttributes redirectAttributes)
     {
         User loggedInUser = (User)session.getAttribute("loggedInUser");
         if(loggedInUser != null)
             return "write";
         else
         {
-            session.setAttribute("error", "로그인 필요");
+            redirectAttributes.addFlashAttribute("message", "로그인 필요");
             return "redirect:/board/list";
         }
     }
@@ -58,7 +59,8 @@ public class PostController
     @PostMapping("/add")
     public String writeArticle(HttpSession session,
                         @RequestParam("title") String title,
-                        @RequestParam("content") String content)
+                        @RequestParam("content") String content,
+                               RedirectAttributes redirectAttributes)
     {
         Post article = new Post();
         article.setPostTitle(title);
@@ -75,6 +77,7 @@ public class PostController
         article.setPostWriteDate(formattedDateTime);
 
         postService.addArticle(article);
+        redirectAttributes.addFlashAttribute("message", "게시글 작성 완료");
 
         return "redirect:/board/list";
     }
@@ -94,7 +97,8 @@ public class PostController
     @PostMapping("/edit")
     public String editArticle(@RequestParam("id") Long id,
                               @RequestParam("title") String title,
-                              @RequestParam("content") String content)
+                              @RequestParam("content") String content,
+                              RedirectAttributes redirectAttributes)
     {
         Post article = postService.getArticleById(id);
         article.setPostTitle(title);
@@ -106,15 +110,18 @@ public class PostController
         article.setPostWriteDate(formattedDateTime);
 
         postService.editArticle(article);
+        redirectAttributes.addFlashAttribute("message", "게시글 수정 완료");
 
         return "redirect:/board/list";
     }
 
     @PostMapping("/remove")
-    public String removeArticle(@RequestParam("id") Long id)
+    public String removeArticle(@RequestParam("id") Long id,
+                                RedirectAttributes redirectAttributes)
     {
         Post article = postService.getArticleById(id);
         postService.removeArticle(article);
+        redirectAttributes.addFlashAttribute("message", "게시글 삭제 완료");
 
         return "redirect:/board/list";
     }
@@ -122,7 +129,8 @@ public class PostController
     @PostMapping("/add-comment")
     public String addComment(@RequestParam("commentContent") String content,
                              HttpSession session, HttpServletRequest request,
-                             @RequestParam("id") Long postId)
+                             @RequestParam("id") Long postId,
+                             RedirectAttributes redirectAttributes)
     {
         Comment comment = new Comment();
         comment.setContent(content);
@@ -136,6 +144,7 @@ public class PostController
         comment.setWriteDate(formattedDateTime);
 
         comment.setPost(postService.getArticleById(postId));
+        redirectAttributes.addFlashAttribute("message", "댓글 작성 완료");
 
         commentService.addComment(comment);
 
@@ -145,7 +154,8 @@ public class PostController
     @PostMapping("/edit-comment")
     public String editComment(@RequestParam("id") Long commentId,
                               @RequestParam("content") String content,
-                              HttpServletRequest request)
+                              HttpServletRequest request,
+                              RedirectAttributes redirectAttributes)
     {
         Comment comment = commentService.getCommentById(commentId);
 
@@ -157,17 +167,20 @@ public class PostController
         comment.setWriteDate(formattedDateTime);
 
         commentService.editComment(comment);
+        redirectAttributes.addFlashAttribute("message", "댓글 수정 완료");
 
         return "redirect:" + request.getHeader("Referer");
     }
 
     @PostMapping("/remove-comment")
     public String removeComment(@RequestParam("id") Long commentId,
-                                HttpServletRequest request)
+                                HttpServletRequest request,
+                                RedirectAttributes redirectAttributes)
     {
         Comment comment = commentService.getCommentById(commentId);
 
         commentService.removeComment(comment);
+        redirectAttributes.addFlashAttribute("message", "댓글 삭제 완료");
 
         return "redirect:" + request.getHeader("Referer");
     }
@@ -192,7 +205,7 @@ public class PostController
         if(userLikeService.addLike(like))
         {
             postService.likeArticle(postId);
-            redirectAttributes.addFlashAttribute("message", "추천 완료");
+            redirectAttributes.addFlashAttribute("message", "게시글 추천 완료");
         }
         else
             redirectAttributes.addFlashAttribute("message", "이미 추천한 게시글입니다.");
@@ -220,7 +233,7 @@ public class PostController
         if(userLikeService.addLike(like))
         {
             commentService.likeComment(commentId);
-            redirectAttributes.addFlashAttribute("message", "추천 완료");
+            redirectAttributes.addFlashAttribute("message", "댓글 추천 완료");
         }
         else
             redirectAttributes.addFlashAttribute("message", "이미 추천한 댓글입니다.");

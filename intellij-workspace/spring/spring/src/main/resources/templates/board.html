@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Board</title>
     <script th:inline="javascript">
-        const error = /*[[${session.error}]]*/"";
+        let message = /*[[${message}]]*/"";
 
-        if (error)
+        if (message)
         {
-            alert(error);
+            alert(message);
+            message = "";
         }
     </script>
 </head>

@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Sign up</title>
+    <script th:inline="javascript">
+        let message = /*[[${message}]]*/"";
+
+        if (message)
+        {
+            alert(message);
+            message = "";
+        }
+    </script>
 </head>
 <body>
 <div class="container mt-5">
@@ -37,14 +46,8 @@
                                 <option value="user">User</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">회원 가입</button>
+                        <button type="submit" class="btn btn-primary btn-block">등록</button>
                         <button type="button" class="btn btn-secondary btn-block" onclick="window.location.href='/user/sign-in'">로그인</button>
-                        <div th:if="${error}" class="text-danger mt-3">
-                            <p th:text="${error}" class="text-center"></p>
-                        </div>
-                        <div th:if="${success}" class="text-success mt-3">
-                            <p th:text="${success}" class="text-center"></p>
-                        </div>
                     </form>
                 </div>
             </div>

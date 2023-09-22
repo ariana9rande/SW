@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Sign in</title>
+    <script th:inline="javascript">
+        let message = /*[[${message}]]*/"";
+
+        if (message)
+        {
+            alert(message);
+            message = "";
+        }
+    </script>
 </head>
 <body>
 <div class="container mt-5">
@@ -23,9 +32,6 @@
                             <input type="password" class="form-control" name="password" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">로그인</button>
-                        <div th:if="${error}" class="text-danger mt-3">
-                            <p th:text="${error}" class="text-center"></p>
-                        </div>
                     </form>
                 </div>
             </div>
