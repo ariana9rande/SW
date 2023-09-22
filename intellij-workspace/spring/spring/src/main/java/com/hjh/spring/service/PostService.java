@@ -2,6 +2,8 @@ package com.hjh.spring.service;
 
 import com.hjh.spring.model.entity.Post;
 import com.hjh.spring.repository.PostRepository;
+import com.hjh.spring.repository.UserLikeRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +13,12 @@ import java.util.List;
 public class PostService
 {
     PostRepository postRepository;
+    UserLikeRepository userLikeRepository;
 
-    public PostService(PostRepository postRepository)
+    public PostService(PostRepository postRepository, UserLikeRepository userLikeRepository)
     {
         this.postRepository = postRepository;
+        this.userLikeRepository = userLikeRepository;
     }
 
     public List<Post> getPostList()
@@ -51,8 +55,10 @@ public class PostService
         postRepository.save(article);
     }
 
+    @Transactional
     public void removeArticle(Post article)
     {
+        userLikeRepository.deleteByPostPostId(article.getPostId());
         postRepository.delete(article);
     }
 

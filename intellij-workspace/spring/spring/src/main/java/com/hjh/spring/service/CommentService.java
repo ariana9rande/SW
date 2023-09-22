@@ -3,6 +3,8 @@ package com.hjh.spring.service;
 import com.hjh.spring.model.entity.Comment;
 import com.hjh.spring.model.entity.Post;
 import com.hjh.spring.repository.CommentRepository;
+import com.hjh.spring.repository.UserLikeRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,10 +13,12 @@ import java.util.List;
 public class CommentService
 {
     CommentRepository commentRepository;
+    UserLikeRepository userLikeRepository;
 
-    public CommentService(CommentRepository commentRepository)
+    public CommentService(CommentRepository commentRepository, UserLikeRepository userLikeRepository)
     {
         this.commentRepository = commentRepository;
+        this.userLikeRepository = userLikeRepository;
     }
 
     public Comment getCommentById(Long id)
@@ -48,8 +52,10 @@ public class CommentService
         commentRepository.save(comment);
     }
 
+    @Transactional
     public void removeComment(Comment comment)
     {
+        userLikeRepository.deleteByCommentId(comment.getId());
         commentRepository.delete(comment);
     }
 

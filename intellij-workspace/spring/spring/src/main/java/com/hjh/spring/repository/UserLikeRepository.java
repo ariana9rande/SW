@@ -12,4 +12,6 @@ public interface UserLikeRepository extends JpaRepository<UserLike, Long>
 {
     UserLike findUserLikeByUserAndPost(User user, Post post);
     UserLike findUserLikeByUserAndComment(User user, Comment comment);
+    void deleteByCommentId(Long id);
+    void deleteByPostPostId(Long id);
 }

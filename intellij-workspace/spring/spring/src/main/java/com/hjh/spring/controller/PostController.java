@@ -98,7 +98,8 @@ public class PostController
     public String editArticle(@RequestParam("id") Long id,
                               @RequestParam("title") String title,
                               @RequestParam("content") String content,
-                              RedirectAttributes redirectAttributes)
+                              RedirectAttributes redirectAttributes,
+                              HttpServletRequest request)
     {
         Post article = postService.getArticleById(id);
         article.setPostTitle(title);
@@ -112,7 +113,7 @@ public class PostController
         postService.editArticle(article);
         redirectAttributes.addFlashAttribute("message", "게시글 수정 완료");
 
-        return "redirect:/board/list";
+        return "redirect:" + request.getHeader("Referer");
     }
 
     @PostMapping("/remove")
