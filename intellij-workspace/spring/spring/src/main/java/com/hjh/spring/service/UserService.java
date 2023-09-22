@@ -36,10 +36,4 @@ public class UserService
     {
         return userRepository.findUserByName(name);
     }
-//
-//    @Override
-//    public void deleteById(Long aLong)
-//    {
-//
-//    }
 }
