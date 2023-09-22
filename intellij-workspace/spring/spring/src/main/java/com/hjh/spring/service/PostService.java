@@ -60,8 +60,6 @@ public class PostService
     {
         Post article = postRepository.findArticleByPostId(id);
 
-
-
         article.setLikeCount(article.getLikeCount() + 1);
         postRepository.save(article);
     }

@@ -20,6 +20,14 @@
         }
     </style>
     <script th:inline="javascript">
+        let message = /*[[${message}]]*/"";
+
+        if (message)
+        {
+            alert(message);
+            message = "";
+        }
+
         function fn_enable() {
             document.querySelector('#title').disabled = false;
             document.querySelector('#content').disabled = false;
@@ -112,7 +120,7 @@
 
             const input = document.createElement("input");
             input.type = "hidden";
-            input.name = "id";
+            input.name = "postId";
             input.value = postId;
 
             form.appendChild(input);
@@ -128,7 +136,7 @@
 
             const input = document.createElement("input");
             input.type = "hidden";
-            input.name = "id";
+            input.name = "commentId";
             input.value = commentId;
 
             form.appendChild(input);
