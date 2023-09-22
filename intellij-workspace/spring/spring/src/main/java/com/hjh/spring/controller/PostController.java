@@ -139,10 +139,12 @@ public class PostController
 
     @PostMapping("/edit-comment")
     public String editComment(@RequestParam("id") Long commentId,
-                              @RequestParam("content_{comment.id}") String content,
+                              @RequestParam("content") String content,
                               HttpServletRequest request)
     {
         Comment comment = commentService.getCommentById(commentId);
+
+        comment.setContent(content);
 
         LocalDateTime dateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
