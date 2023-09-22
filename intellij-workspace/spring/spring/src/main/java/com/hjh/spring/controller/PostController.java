@@ -137,4 +137,20 @@ public class PostController
         return "redirect:" + request.getHeader("Referer");
     }
 
+    @PostMapping("/edit-comment")
+    public String editComment(@RequestParam("id") Long commentId,
+                              @RequestParam("content_{comment.id}") String content,
+                              HttpServletRequest request)
+    {
+        Comment comment = commentService.getCommentById(commentId);
+
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = dateTime.format(formatter);
+        comment.setWriteDate(formattedDateTime);
+
+        commentService.editComment(comment);
+
+        return "redirect:" + request.getHeader("Referer");
+    }
 }

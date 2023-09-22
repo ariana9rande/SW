@@ -6,7 +6,11 @@
     <!-- 부트스트랩 CSS 링크 추가 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        #tr_btn_modify, #tr_btn_modify_comment
+        #tr_btn_modify
+        {
+            display: none;
+        }
+        .comment_btn_modify
         {
             display: none;
         }
@@ -43,15 +47,10 @@
         // 수정 버튼 클릭 시 해당 댓글을 수정 모드로 변경
         function fn_enable_comment(commentId) {
             // 댓글 내용 텍스트 에어리어를 활성화 (수정 가능 상태로 변경)
-            document.getElementById(`commentContent_${commentId}`).disabled = false;
+            document.querySelector(`#commentContent_${commentId}`).disabled = false;
 
-            // 수정 및 삭제 버튼 숨기기
-            document.querySelector(`input[value='수정'][onclick="fn_enable_comment('${commentId}')"]`).style.display = 'none';
-            document.querySelector(`input[value='삭제'][onclick="fn_delete_comment('${commentId}')"]`).style.display = 'none';
-
-            // 저장 및 취소 버튼 표시
-            document.querySelector(`input[value='저장'][onclick="fn_modify_comment('${commentId}')"]`).style.display = 'inline-block';
-            document.querySelector(`input[value='취소'][onclick="fn_disable_comment('${commentId}')"]`).style.display = 'inline-block';
+            document.querySelector(`#comment_btn_${commentId}`).style.display = 'none';
+            document.querySelector(`#comment_btn_modify_${commentId}`).style.display = 'table-row';
         }
 
         // 삭제 버튼 클릭 시 해당 댓글 삭제
@@ -70,13 +69,9 @@
             // 댓글 내용 텍스트 에어리어를 비활성화 (수정 불가능 상태로 변경)
             document.getElementById(`commentContent_${commentId}`).disabled = true;
 
-            // 저장 및 취소 버튼 숨기기
-            document.querySelector(`input[value='저장'][onclick="fn_modify_comment('${commentId}')"]`).style.display = 'none';
-            document.querySelector(`input[value='취소'][onclick="fn_disable_comment('${commentId}')"]`).style.display = 'none';
+            document.getElementById(`comment_btn_${commentId}`).style.display = 'table-row';
+            document.getElementById(`comment_btn_modify_${commentId}`).style.display = 'none';
 
-            // 수정 및 삭제 버튼 표시
-            document.querySelector(`input[value='수정'][onclick="fn_enable_comment('${commentId}')"]`).style.display = 'inline-block';
-            document.querySelector(`input[value='삭제'][onclick="fn_delete_comment('${commentId}')"]`).style.display = 'inline-block';
         }
 
         // 취소 버튼 클릭 시 수정 모드에서 댓글 보기 모드로 변경
@@ -84,13 +79,8 @@
             // 댓글 내용 텍스트 에어리어를 비활성화 (수정 불가능 상태로 변경)
             document.getElementById(`commentContent_${commentId}`).disabled = true;
 
-            // 저장 및 취소 버튼 숨기기
-            document.querySelector(`input[value='저장'][onclick="fn_modify_comment('${commentId}')"]`).style.display = 'none';
-            document.querySelector(`input[value='취소'][onclick="fn_disable_comment('${commentId}')"]`).style.display = 'none';
-
-            // 수정 및 삭제 버튼 표시
-            document.querySelector(`input[value='수정'][onclick="fn_enable_comment('${commentId}')"]`).style.display = 'inline-block';
-            document.querySelector(`input[value='삭제'][onclick="fn_delete_comment('${commentId}')"]`).style.display = 'inline-block';
+            document.getElementById(`comment_btn_${commentId}`).style.display = 'table-row';
+            document.getElementById(`comment_btn_modify_${commentId}`).style.display = 'none';
         }
     </script>
 </head>
@@ -188,23 +178,34 @@
         </tr>
         <!-- 댓글이 있는 경우 -->
         <tr th:unless="${commentList.isEmpty()}" th:each="comment : ${commentList}" align="center">
+            <form method="post" th:action="@{/board/edit-comment(id=${comment.id})}">
             <td width="10%" th:text="${comment.writer}"></td>
             <td width="35%">
-                <textarea th:id="'commentContent_' + ${comment.id}" class="form-control" style="resize:none" disabled>[[${comment.content}]]</textarea>
+                <textarea th:id="'commentContent_' + ${comment.id}" th:name="'content_' + ${comment.id}" class="form-control" style="resize:none" disabled>[[${comment.content}]]</textarea>
             </td>
             <td width="15%" th:text="${comment.writeDate}"></td>
             <!-- 수정 및 삭제 버튼 -->
             <td align="center" width="15%">
-                <!-- 수정 버튼 -->
-                <input type="button" value="수정" onclick="fn_enable_comment('${comment.id}')" class="btn btn-primary btn-sm"
-                       th:if="${session.loggedInUser != null && (session.loggedInUser.role == 'admin' ||  session.loggedInUser.name == comment.writer)}">
-                <!-- 삭제 버튼 -->
-                <input type="button" value="삭제" onclick="fn_delete_comment('${comment.id}')" class="btn btn-danger btn-sm"
-                       th:if="${session.loggedInUser != null && (session.loggedInUser.role == 'admin' ||  session.loggedInUser.name == comment.writer)}">
-                <!-- 저장 및 취소 버튼 (수정 모드에서만 표시) -->
-                <input type="button" value="저장" onclick="fn_modify_comment('${comment.id}')" class="btn btn-primary btn-sm" style="display: none;">
-                <input type="button" value="취소" onclick="fn_disable_comment('${comment.id}')" class="btn btn-secondary btn-sm" style="display: none;">
+                <div th:id="'comment_btn_' + ${comment.id}">
+                    <!-- 수정 버튼 -->
+                    <input type="button" value="수정" th:onclick="'fn_enable_comment(' + ${comment.id} + ')'"
+                           class="btn btn-primary btn-sm"
+                           th:if="${session.loggedInUser != null && (session.loggedInUser.role == 'admin' ||  session.loggedInUser.name == comment.writer)}">
+                    <!-- 삭제 버튼 -->
+                    <input type="button" value="삭제" th:onclick="'fn_delete_comment(' + ${comment.id} + ')'"
+                           class="btn btn-danger btn-sm"
+                           th:if="${session.loggedInUser != null && (session.loggedInUser.role == 'admin' ||  session.loggedInUser.name == comment.writer)}">
+                </div>
+                <div th:id="'comment_btn_modify_' + ${comment.id}" class="comment_btn_modify">
+                    <!-- 저장 및 취소 버튼 (수정 모드에서만 표시) -->
+
+                        <button type="submit" class="btn btn-primary btn-sm">저장</button>
+
+                    <input type="button" value="취소" th:onclick="'fn_disable_comment(' + ${comment.id} + ')'"
+                           class="btn btn-secondary btn-sm">
+                </div>
             </td>
+            </form>
         </tr>
         </tbody>
     </table>
