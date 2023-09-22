@@ -31,6 +31,9 @@ public class Post
     @Column(nullable = false, columnDefinition = "int default 0")
     private int viewCount;
 
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private int likeCount;
+
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 }

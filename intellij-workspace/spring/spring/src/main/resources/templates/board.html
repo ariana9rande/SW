@@ -45,6 +45,7 @@
             <th>제목</th>
             <th>작성일</th>
             <th>조회수</th>
+            <th>추천수</th>
         </tr>
         </thead>
         <tbody th:if="${postList.isEmpty()}">
@@ -63,6 +64,7 @@
             </td>
             <td width="15%" th:text="${article.postWriteDate}"></td>
             <td width="10%" th:text="${article.viewCount}"></td>
+            <td width="10%" th:text="${article.likeCount}"></td>
         </tr>
         </tbody>
     </table>

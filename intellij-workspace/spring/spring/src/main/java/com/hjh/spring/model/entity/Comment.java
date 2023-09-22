@@ -20,6 +20,9 @@ public class Comment
 
     private String writeDate;
 
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private int likeCount;
+
     @ManyToOne
     @JoinColumn(name="post_id")
     private Post post;

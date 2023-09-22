@@ -155,4 +155,33 @@ public class PostController
 
         return "redirect:" + request.getHeader("Referer");
     }
+
+    @PostMapping("/remove-comment")
+    public String removeComment(@RequestParam("id") Long commentId,
+                                HttpServletRequest request)
+    {
+        Comment comment = commentService.getCommentById(commentId);
+
+        commentService.removeComment(comment);
+
+        return "redirect:" + request.getHeader("Referer");
+    }
+
+    @PostMapping("/like-post")
+    public String likePost(@RequestParam("id") Long postId,
+                           HttpServletRequest request)
+    {
+        postService.likeArticle(postId);
+
+        return "redirect:" + request.getHeader("Referer");
+    }
+
+    @PostMapping("/like-comment")
+    public String likeComment(@RequestParam("id") Long commentId,
+                           HttpServletRequest request)
+    {
+        commentService.likeComment(commentId);
+
+        return "redirect:" + request.getHeader("Referer");
+    }
 }

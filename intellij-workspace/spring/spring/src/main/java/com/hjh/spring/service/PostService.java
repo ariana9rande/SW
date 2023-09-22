@@ -55,4 +55,14 @@ public class PostService
     {
         postRepository.delete(article);
     }
+
+    public void likeArticle(Long id)
+    {
+        Post article = postRepository.findArticleByPostId(id);
+
+
+
+        article.setLikeCount(article.getLikeCount() + 1);
+        postRepository.save(article);
+    }
 }

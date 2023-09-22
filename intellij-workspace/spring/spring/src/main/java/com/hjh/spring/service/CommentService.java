@@ -52,4 +52,12 @@ public class CommentService
     {
         commentRepository.delete(comment);
     }
+
+    public void likeComment(Long id)
+    {
+        Comment comment = commentRepository.findCommentById(id);
+
+        comment.setLikeCount(comment.getLikeCount() + 1);
+        commentRepository.save(comment);
+    }
 }
