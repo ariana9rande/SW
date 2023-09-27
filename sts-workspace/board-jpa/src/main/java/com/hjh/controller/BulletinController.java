@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -32,6 +34,8 @@ public class BulletinController
 	@Autowired
 	UserService userService;
 	
+	Logger logger = LoggerFactory.getLogger("com.hjh.controller.BulletinController");
+	
 	@RequestMapping({"/list", "/"})
 	public String getArticleList(Model model)
 	{
@@ -48,9 +52,12 @@ public class BulletinController
 	}
 	
 	@PostMapping("/addarticle")
+	@PreAuthorize("isAuthenticated()")
 	public String addArticle(@RequestParam(value="i_title") String title,
 			@RequestParam(value="i_content") String content, Principal principal)
 	{
+		logger.debug("addArticle TITLE : ");
+		
 		Bulletin bulletin = new Bulletin();
 		
 		bulletin.setTitle(title);
@@ -64,6 +71,8 @@ public class BulletinController
 	@GetMapping("/view")
 	public ModelAndView viewArticle(@RequestParam(value="no") String articleNo)
 	{
+		logger.debug("articleNo: "+ articleNo);
+		
 		Bulletin bulletin = new Bulletin();
 		
 		bulletin = bulletinService.viewArticle(Integer.parseInt(articleNo));

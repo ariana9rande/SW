@@ -3,5 +3,4 @@ from . import views
 
 urlpatterns = [
     path('predict/', views.catordog, name='catordog'),
-    path('get-csrf-token/', views.get_csrf_token, name='get_csrf_token'),
 ]

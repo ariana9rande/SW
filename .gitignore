@@ -1,1 +1,9 @@
 /sts-4.20.0.RELEASE/
+OracleVM/ubuntu/ubuntu.vbox
+OracleVM/ubuntu/ubuntu.vbox-prev
+.gitignore
+OracleVM/ubuntu/Logs/VBox.log
+.gitignore
+OracleVM/ubuntu/Logs/VBox.log.1
+OracleVM/ubuntu/Logs/VBoxHardening.log
+OracleVM/ubuntu/ubuntu.vdi
