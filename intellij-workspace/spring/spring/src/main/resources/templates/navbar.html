@@ -6,7 +6,7 @@
                 <span class="nav-link text-dark" th:text="${session.loggedInUser.getName() + '님'}"></span>
             </li>
             <li class="nav-item" th:if="${session.loggedInUser}">
-                <a class="nav-link" th:href="@{/user/edit-profile}">정보수정</a>
+                <a class="nav-link" th:href="@{/user/edit-profile-password-confirm}">정보수정</a>
             </li>
             <li class="nav-item" th:if="${session.loggedInUser}">
                 <a class="nav-link" th:href="@{/user/logout}">로그아웃</a>

@@ -36,4 +36,9 @@ public class UserService
     {
         return userRepository.findUserByName(name);
     }
+
+    public void update(User user)
+    {
+        userRepository.save(user);
+    }
 }
