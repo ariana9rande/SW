@@ -5,6 +5,7 @@ import com.hjh.spring.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class UserController
     @GetMapping("/sign-up")
     public String signUpForm()
     {
-        return "sign-up-form";
+        return "user/sign-up-form";
     }
 
     @PostMapping("/sign-up")
@@ -53,13 +54,13 @@ public class UserController
         userService.register(user);
 
         redirectAttributes.addFlashAttribute("message", "회원 가입 완료");
-        return "redirect:/user/sign-up-form";
+        return "redirect:/user/sign-up";
     }
 
     @GetMapping("/sign-in")
     public String signInForm()
     {
-        return "sign-in-form";
+        return "user/sign-in-form";
     }
 
     @PostMapping("/sign-in")
@@ -86,4 +87,12 @@ public class UserController
         session.invalidate();
         return "redirect:/";
     }
+
+    @GetMapping("/edit-profile")
+    public String userProfile()
+    {
+        return "user/edit-profile-form";
+    }
+
+
 }
