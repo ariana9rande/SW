@@ -2132,3 +2132,19 @@ java.net.ConnectException: Connection refused: connect
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2023-09-27 17:18:13:10249127][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[2023-09-27 17:18:13:10249198][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+[2023-09-27 17:18:13:10249199][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[2023-09-27 17:18:13:10249203][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-27 17:18:13:10249220][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+[2023-09-27 17:18:13:10249232][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-09-27 17:18:13:10249252][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2023-09-27 17:18:13:10249259][RMI TCP Connection(174)-127.0.0.1] [INFO ]
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
