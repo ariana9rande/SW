@@ -17,4 +17,5 @@ public class ReplyDTO
     private int boardId;
     private LocalDateTime entryDate;
     private LocalDateTime modifyDate;
+    private String nickname;
 }

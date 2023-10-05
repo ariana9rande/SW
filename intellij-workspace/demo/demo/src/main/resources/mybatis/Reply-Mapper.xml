@@ -3,8 +3,8 @@
 <mapper namespace="com.hjh.mapper.ReplyMapper">
     <select id="selectAll" resultType="replyDTO">
         SELECT * FROM reply
-        inner join board
-        on board_id = board.id
+        inner join user
+        on writer_id = user.id
     </select>
 
     <select id="selectOne" parameterType="int" resultType="replyDTO">

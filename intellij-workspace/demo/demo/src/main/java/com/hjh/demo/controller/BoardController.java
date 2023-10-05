@@ -1,6 +1,7 @@
 package com.hjh.demo.controller;
 
 import com.hjh.demo.model.BoardDTO;
+import com.hjh.demo.model.ReplyDTO;
 import com.hjh.demo.model.UserDTO;
 import com.hjh.demo.service.ReplyService;
 import com.hjh.demo.service.UserService;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hjh.demo.service.BoardService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class BoardController
@@ -76,7 +80,16 @@ public class BoardController
         
         model.addAttribute("board", boardDTO);
         model.addAttribute("login", (UserDTO)session.getAttribute("login"));
-        model.addAttribute("replyList", replyService.selectAll());
+
+        List<ReplyDTO> replyList = new ArrayList<>();
+
+        for(ReplyDTO r : replyService.selectAll())
+        {
+            if(r.getBoardId() == id)
+                replyList.add(r);
+        }
+
+        model.addAttribute("replyList", replyList);
 
         return "board/showOne";
     }
