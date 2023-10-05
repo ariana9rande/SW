@@ -9,7 +9,7 @@
 <body>
 <%@ include file="../loginnav.jsp" %>
     <form action="/board/write" method="post">
-        제목: <input tyoe="text" name="title"><br>
+        제목: <input type="text" name="title"><br>
         내용: <textarea name="content"></textarea><br>
         <button type="submit">작성하기</button>
     </form>

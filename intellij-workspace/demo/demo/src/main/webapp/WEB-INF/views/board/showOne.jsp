@@ -17,6 +17,26 @@
     <a href="/board/update/${board.id}">수정하기</a>
     <a href="/board/delete/${board.id}">삭제하기</a>
 </c:if>
+<c:if test="${sessionScope.login != null}">
+    <form action="/${board.id}/write-reply" method="post">
+        댓글 : <textarea name="content"></textarea>
+        <br>
+        <button type="submit">작성하기</button>
+    </form>
+</c:if>
+
+<c:if test="${replyList != null}">
+
+    <c:forEach items="${replyList}" var="reply" varStatus="status">
+        <c:set var="size" value="${replyList.size()}"></c:set>
+        ${size - status.index}
+        ${reply.writerId}
+        ${reply.content}
+        ${reply.entryDate}
+        ${reply.modifyDate}
+    </c:forEach>
+</c:if>
+<br>
 <a href="/board/showAll">목록으로</a>
 </body>
 </html>

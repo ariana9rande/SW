@@ -2,6 +2,7 @@ package com.hjh.demo.controller;
 
 import com.hjh.demo.model.BoardDTO;
 import com.hjh.demo.model.UserDTO;
+import com.hjh.demo.service.ReplyService;
 import com.hjh.demo.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -22,12 +23,14 @@ public class BoardController
 {
     private BoardService boardService;
     private UserService userService;
+    private ReplyService replyService;
 
     @Autowired
-    public BoardController(BoardService boardService, UserService userService)
+    public BoardController(BoardService boardService, UserService userService, ReplyService replyService)
     {
         this.boardService = boardService;
         this.userService = userService;
+        this.replyService = replyService;
     }
 
     @GetMapping("/")
@@ -70,11 +73,10 @@ public class BoardController
     public String showOne(@PathVariable int id, HttpSession session, Model model)
     {
         BoardDTO boardDTO = boardService.selectOne(id);
-
-        System.out.println("boardDTO.getEntryDate() = " + boardDTO.getEntryDate());
         
         model.addAttribute("board", boardDTO);
         model.addAttribute("login", (UserDTO)session.getAttribute("login"));
+        model.addAttribute("replyList", replyService.selectAll());
 
         return "board/showOne";
     }
