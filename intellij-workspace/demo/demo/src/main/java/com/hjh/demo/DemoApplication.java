@@ -1,5 +1,6 @@
 package com.hjh.demo;
 
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -10,6 +11,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 @SpringBootApplication
 public class DemoApplication
@@ -27,6 +29,8 @@ public class DemoApplication
 
         Resource[] resourceArray = new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/*.xml");
         sqlSessionFactory.setMapperLocations(resourceArray);
+        sqlSessionFactory.setConfigLocation(
+                new PathMatchingResourcePatternResolver().getResource("classpath:mybatis/mybatis-config.xml"));
 
         return sqlSessionFactory.getObject();
     }

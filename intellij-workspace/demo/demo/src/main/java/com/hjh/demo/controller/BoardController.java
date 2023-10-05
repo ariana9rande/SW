@@ -6,17 +6,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hjh.demo.service.BulletinService;
+import com.hjh.demo.service.BoardService;
 
 @Controller
-public class BulletinController
+public class BoardController
 {
-    private BulletinService bulletinService;
+    private BoardService boardService;
 
     @Autowired
-    public BulletinController(BulletinService bulletinService)
+    public BoardController(BoardService boardService)
     {
-        this.bulletinService = bulletinService;
+        this.boardService = boardService;
     }
 
     @GetMapping("/")
@@ -28,10 +28,8 @@ public class BulletinController
     @GetMapping("/board/showAll")
     public ModelAndView printAll()
     {
-
         ModelAndView mv = new ModelAndView();
-        View view = new View();
-        view.setPrefix(null);
+        mv.addObject("list", boardService.selectAll());
 
         mv.setViewName("board/showAll");
 

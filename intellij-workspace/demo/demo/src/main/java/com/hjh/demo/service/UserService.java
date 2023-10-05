@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class UserService
 {
     private SqlSession sqlSession;
-    private final String namespace = "com.hjh.mapper.UserMapper";
+    private final String NAMESPACE = "com.hjh.mapper.UserMapper";
 
     @Autowired
     public UserService(SqlSession sqlSession)
@@ -17,14 +17,14 @@ public class UserService
         this.sqlSession = sqlSession;
     }
 
+    public void register(UserDTO userDTO)
+    {
+        sqlSession.insert(NAMESPACE + ".register", userDTO);
+    }
+
     public UserDTO auth(UserDTO userDTO)
     {
-        System.out.println("UserService.auth");
-        System.out.println("userDTO.id = " + userDTO.getId());
-        System.out.println("userDTO.name = " + userDTO.getUsername());
-        System.out.println("userDTO.email = " + userDTO.getEmail());
-        System.out.println("userDTO.password = " + userDTO.getPassword());
-        return sqlSession.selectOne(namespace + ".auth", userDTO);
+        return sqlSession.selectOne(NAMESPACE + ".auth", userDTO);
     }
 
 }

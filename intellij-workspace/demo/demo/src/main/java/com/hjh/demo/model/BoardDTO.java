@@ -5,11 +5,12 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class BulletinDTO
+public class BoardDTO
 {
-    private int articleNo;
+    private int id;
     private String content;
     private String title;
-    private Date writeDate;
+    private Date entryDate;
+    private Date modifyDate;
     private int writerId;
 }

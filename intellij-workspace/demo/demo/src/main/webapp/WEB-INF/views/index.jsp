@@ -11,5 +11,7 @@
     PW: <input type="password" name="password">
     <button type="submit">로그인</button>
 </form>
+<br>
+<a href="/user/register">회원 가입</a>
 </body>
 </html>

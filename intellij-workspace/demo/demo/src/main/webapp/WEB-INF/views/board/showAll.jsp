@@ -8,6 +8,6 @@
     <title>게시판</title>
 </head>
 <body>
-
+${list}
 </body>
 </html>
