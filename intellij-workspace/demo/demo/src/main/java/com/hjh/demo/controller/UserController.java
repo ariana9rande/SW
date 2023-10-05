@@ -23,6 +23,8 @@ public class UserController
     public String auth(UserDTO userDTO)
     {
         UserDTO login = userService.auth(userDTO);
+        System.out.println("UserController.auth");
+        System.out.println("userDTO = " + userDTO);
         System.out.println("login = " + login);
         if(login != null)
         {

@@ -19,6 +19,6 @@
         UPDATE bulletin
         SET 'title' = #{title},
             'content' = #{content}
-        WHERE 'article_no' =#{article_no}
+        WHERE 'article_no' = #{article_no}
     </update>
 </mapper>

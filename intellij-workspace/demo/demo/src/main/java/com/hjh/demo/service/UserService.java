@@ -19,7 +19,11 @@ public class UserService
 
     public UserDTO auth(UserDTO userDTO)
     {
-        System.out.println("userDTO = " + userDTO);
+        System.out.println("UserService.auth");
+        System.out.println("userDTO.id = " + userDTO.getId());
+        System.out.println("userDTO.name = " + userDTO.getUsername());
+        System.out.println("userDTO.email = " + userDTO.getEmail());
+        System.out.println("userDTO.password = " + userDTO.getPassword());
         return sqlSession.selectOne(namespace + ".auth", userDTO);
     }
 
