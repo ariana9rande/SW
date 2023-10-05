@@ -27,4 +27,8 @@ public class UserService
         return sqlSession.selectOne(NAMESPACE + ".auth", userDTO);
     }
 
+    public UserDTO selectById(int id)
+    {
+        return sqlSession.selectOne(NAMESPACE + ".select", id);
+    }
 }

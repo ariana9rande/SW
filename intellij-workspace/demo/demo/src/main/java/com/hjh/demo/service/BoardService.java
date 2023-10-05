@@ -40,8 +40,8 @@ public class BoardService
         sqlSession.update(NAMESPACE + ".update", boardDTO);
     }
 
-    public void delete(int article_no)
+    public void delete(int id)
     {
-        sqlSession.delete(NAMESPACE + ".delete", article_no);
+        sqlSession.delete(NAMESPACE + ".delete", id);
     }
 }

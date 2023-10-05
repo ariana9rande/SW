@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>상세 조회</title>
-    <!-- 부트스트랩 CSS 링크 추가 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         #tr_btn_modify {
@@ -56,16 +55,13 @@
             document.querySelector('#commentForm').style.display = 'table-row';
         }
 
-        // 수정 버튼 클릭 시 해당 댓글을 수정 모드로 변경
         function fn_enable_comment(commentId) {
-            // 댓글 내용 텍스트 에어리어를 활성화 (수정 가능 상태로 변경)
             document.querySelector(`#commentContent_${commentId}`).disabled = false;
 
             document.querySelector(`#comment_btn_${commentId}`).style.display = 'none';
             document.querySelector(`#comment_btn_modify_${commentId}`).style.display = 'table-row';
         }
 
-        // 삭제 버튼 클릭 시 해당 댓글 삭제
         function fn_delete_comment(commentId) {
 
             const form = document.createElement("form");
@@ -83,9 +79,7 @@
             form.submit();
         }
 
-        // 취소 버튼 클릭 시 수정 모드에서 댓글 보기 모드로 변경
         function fn_disable_comment(commentId) {
-            // 댓글 내용 텍스트 에어리어를 비활성화 (수정 불가능 상태로 변경)
             document.getElementById(`commentContent_${commentId}`).disabled = true;
 
             document.getElementById(`comment_btn_${commentId}`).style.display = 'table-row';
@@ -242,11 +236,9 @@
             <th>추천수</th>
             <th>관리</th>
         </tr>
-        <!-- 댓글이 없는 경우 -->
         <tr th:if="${commentList.isEmpty()}">
             <td align="center" colspan="4">해당 게시물에는 댓글이 없습니다.</td>
         </tr>
-        <!-- 댓글이 있는 경우 -->
         <tr th:unless="${commentList.isEmpty()}" th:each="comment : ${commentList}" align="center">
             <td width="10%" th:text="${comment.writer}"></td>
             <td width="35%">
@@ -260,20 +252,18 @@
                        class="btn btn-success btn-xs"
                        th:if="${session.loggedInUser != null}">
             </td>
-            <!-- 수정 및 삭제 버튼 -->
             <td align="center" width="10%">
                 <div th:id="'comment_btn_' + ${comment.id}">
-                    <!-- 수정 버튼 -->
                     <input type="button" value="수정" th:onclick="'fn_enable_comment(' + ${comment.id} + ')'"
                            class="btn btn-primary btn-xs"
                            th:if="${session.loggedInUser != null && (session.loggedInUser.name == comment.writer)}">
-                    <!-- 삭제 버튼 -->
+
                     <input type="button" value="삭제" th:onclick="'fn_delete_comment(' + ${comment.id} + ')'"
                            class="btn btn-danger btn-xs"
                            th:if="${session.loggedInUser != null && (session.loggedInUser.role == 'admin' ||  session.loggedInUser.name == comment.writer)}">
                 </div>
                 <div th:id="'comment_btn_modify_' + ${comment.id}" class="comment_btn_modify">
-                    <!-- 저장 및 취소 버튼 (수정 모드에서만 표시) -->
+
                     <input type="button" value="저장" class="btn btn-primary btn-xs"
                            th:onclick="'fn_modify_comment(' + ${comment.id} + ')'">
                     <input type="button" value="취소" th:onclick="'fn_disable_comment(' + ${comment.id} + ')'"
@@ -284,7 +274,6 @@
         </tbody>
     </table>
 </div>
-<!-- 부트스트랩 및 jQuery 스크립트 추가 -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hjh.mapper.UserMapper">
-    <select id="auth" parameterType="com.hjh.demo.model.UserDTO" resultType="com.hjh.demo.model.UserDTO">
+    <select id="auth" parameterType="userDTO" resultType="userDTO">
         SELECT * FROM user
         WHERE username = #{username}
         AND password = #{password}
     </select>
 
-    <insert id="register" parameterType="com.hjh.demo.model.UserDTO">
+    <insert id="register" parameterType="userDTO">
         INSERT INTO user(username, password, nickname, email, entry_date, modify_date)
         values (#{username}, #{password}, #{nickname}, #{email}, NOW(), NOW())
     </insert>
+
+    <select id="select" parameterType="int" resultType="userDTO">
+        select * from user
+        where id = #{id}
+    </select>
 </mapper>

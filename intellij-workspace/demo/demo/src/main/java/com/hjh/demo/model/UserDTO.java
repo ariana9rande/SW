@@ -1,10 +1,14 @@
 package com.hjh.demo.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
+@Getter
+@Setter
 public class UserDTO
 {
     private int id;
@@ -12,6 +16,6 @@ public class UserDTO
     private String password;
     private String username;
     private String nickname;
-    private Date entryDate;
-    private Date modifyDate;
+    private LocalDateTime entryDate;
+    private LocalDateTime modifyDate;
 }

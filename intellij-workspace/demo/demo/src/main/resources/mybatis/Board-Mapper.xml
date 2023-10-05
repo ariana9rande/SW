@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hjh.mapper.BoardMapper">
-    <select id="selectAll" resultType="com.hjh.demo.model.BoardDTO">
+    <select id="selectAll" resultType="boardDTO">
         SELECT * FROM board
+        inner join user
+        on board.writer_id = user.id
+        order by board.id desc
     </select>
 
-    <select id="selectOne" parameterType="int" resultType="com.hjh.demo.model.BoardDTO">
+    <select id="selectOne" parameterType="int" resultType="boardDTO">
         SELECT * FROM board
-        WHERE id = #{id}
+        inner join user
+        on board.writer_id = user.id
+        WHERE board.id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.hjh.demo.model.BoardDTO">
+    <insert id="insert" parameterType="boardDTO">
         INSERT INTO board(title, content, writer_id, entry_date, modify_date)
-        VALUES(#{title}, #{content}, #{writer_id}, NOW(), NOW())
+        VALUES(#{title}, #{content}, #{writerId}, NOW(), NOW())
     </insert>
 
-    <update id="update" parameterType="com.hjh.demo.model.BoardDTO">
+    <update id="update" parameterType="boardDTO">
         UPDATE board
         SET title = #{title},
-            content = #{content}
+            content = #{content},
+            modify_date = NOW()
         WHERE id = #{id}
     </update>
+
+    <delete id="delete" parameterType="int">
+        Delete from board
+        where id = #{id}
+    </delete>
 </mapper>

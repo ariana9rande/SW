@@ -2,6 +2,7 @@ package com.hjh.demo.controller;
 
 import com.hjh.demo.model.UserDTO;
 import com.hjh.demo.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,17 +36,24 @@ public class UserController
     }
 
     @PostMapping("/auth")
-    public String auth(UserDTO userDTO)
+    public String auth(UserDTO userDTO, HttpSession session)
     {
         UserDTO login = userService.auth(userDTO);
-        System.out.println("UserController.auth");
 
-        System.out.println("login.entryDate = " + login.getEntryDate());
         if(login != null)
         {
+            session.setAttribute("login", login);
             return "redirect:/board/showAll";
         }
         else
             return "redirect:/";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session)
+    {
+        session.invalidate();
+
+        return "redirect:/board/showAll";
     }
 }
