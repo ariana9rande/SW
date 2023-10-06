@@ -2,6 +2,9 @@
     <a class="navbar-brand" th:href="@{/}">Home</a>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+            <li class="nav-item" th:if="${session.loggedInUser != null && session.loggedInUser.role == 1}">
+                <a class="nav-link" th:href="@{/admin/dashboard}">관리자 메뉴</a>
+            </li>
             <li class="nav-item" th:if="${session.loggedInUser}">
                 <span class="nav-link text-dark" th:text="${session.loggedInUser.getUsername() + '님'}"></span>
             </li>

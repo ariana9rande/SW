@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Sign in</title>
+    <title>Delete Movie</title>
     <script th:inline="javascript">
         let message = /*[[${message}]]*/"";
 
@@ -16,28 +16,24 @@
     </script>
 </head>
 <body>
+<div th:replace="navbar.html"></div>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title text-center">Sign In</h3>
-                    <form th:action="@{/user/sign-in}" method="post">
-                        <div class="form-group">
-                            <label for="username">ID</label>
-                            <input type="text" class="form-control" name="username" required>
-                        </div>
+                    <h3 class="card-title text-center">비밀번호 입력</h3>
+                    <form th:action="@{/movie/delete/{id}(id=${movie.id})}" method="post">
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" name="password" required>
                         </div>
-                        <input th:value="${url}" type="hidden" name="url">
-                        <button type="submit" class="btn btn-primary btn-block">로그인</button>
+                        <button type="submit" class="btn btn-danger btn-block">삭제</button>
                     </form>
                 </div>
             </div>
             <br>
-            <a class="btn btn-secondary btn-block" th:href="@{/}">처음으로</a>
+            <a class="btn btn-secondary btn-block" th:href="@{/movie/list}">이전 화면으로</a>
         </div>
     </div>
 </div>

@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,8 +55,10 @@ public class UserController
     }
 
     @GetMapping("/sign-in")
-    public String signInForm()
+    public String signInForm(HttpServletRequest request, Model model)
     {
+        model.addAttribute("url", request.getHeader("Referer"));
+
         return "user/sign-in";
     }
 
@@ -64,7 +67,8 @@ public class UserController
                          @RequestParam("username") String username,
                          @RequestParam("password") String password,
                          RedirectAttributes redirectAttributes,
-                         HttpServletRequest request)
+                         HttpServletRequest request,
+                         @RequestParam("url") String url)
     {
         User login = userService.login(username, password);
 
@@ -72,7 +76,7 @@ public class UserController
         {
             session.setAttribute("loggedInUser", login);
 
-            return "redirect:/";
+            return "redirect:" + url;
         }
         else
         {
@@ -80,5 +84,15 @@ public class UserController
 
             return "redirect:" + request.getHeader("Referer");
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(RedirectAttributes redirectAttributes, HttpSession session,
+                         HttpServletRequest request)
+    {
+        session.invalidate();
+        redirectAttributes.addFlashAttribute("message", "로그아웃되었습니다.");
+
+        return "redirect:" + request.getHeader("Referer");
     }
 }

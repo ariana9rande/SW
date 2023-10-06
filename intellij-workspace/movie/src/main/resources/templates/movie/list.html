@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Movie List</title>
+    <script th:inline="javascript">
+        let message = /*[[${message}]]*/"";
+
+        if (message)
+        {
+            alert(message);
+            message = "";
+        }
+    </script>
 </head>
 <body>
 <div th:replace="navbar.html"></div>
@@ -31,14 +40,16 @@
         <tbody th:unless="${movieList.isEmpty()}">
         <tr th:each="movie : ${movieList}" align="center">
             <td th:text="${movie.id}"></td>
-            <td th:text="${movie.title}"></td>
+            <td>
+                <a th:href="@{/movie/view/{id}(id = ${movie.id})}" th:text="${movie.title}"></a>
+            </td>
             <td th:text="${movie.director}"></td>
             <td th:text="${movie.summary}"></td>
             <td th:text="${movie.releasedYear}"></td>
             <td th:text="${movie.rating}"></td>
             <td th:if="${session.loggedInUser != null && session.loggedInUser.role == 1}">
-                <a th:href="@{/edit/${movie.id}}" class="btn btn-warning btn-sm">수정</a>
-                <a th:href="@{/delete/${movie.id}}" class="btn btn-danger btn-sm">삭제</a>
+                <a th:href="@{/movie/edit/{id}(id = ${movie.id})}" class="btn btn-warning btn-sm">수정</a>
+                <a th:href="@{/movie/delete/{id}(id = ${movie.id})}" class="btn btn-danger btn-sm">삭제</a>
             </td>
         </tr>
         </tbody>
