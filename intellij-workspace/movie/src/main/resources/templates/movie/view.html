@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Movie List</title>
+    <style>
+        td {
+            text-align: center;
+        }
+
+        input {
+            text-align: center;
+        }
+    </style>
+    <script th:inline="javascript">
+        let message = /*[[${message}]]*/"";
+
+        if (message) {
+            alert(message);
+            message = "";
+        }
+    </script>
+</head>
+<body>
+<div th:replace="navbar.html"></div>
+<div class="container mt-5">
+    <h1 align="center">영화 정보</h1><br>
+    <table class="table table-bordered">
+        <tr>
+            <td width="15%" align="center">영화 번호</td>
+            <td>
+                <input type="text" th:value="${movie.id}" class="form-control" disabled>
+            </td>
+            <td align="center">제목</td>
+            <td colspan="3" width="55%">
+                <input type="text" th:value="${movie.title}" class="form-control" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">줄거리</td>
+            <td colspan="5">
+                <textarea rows="5" name="summary" class="form-control" style="resize:none; height:auto;"
+                          disabled>[[${movie.summary}]]</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">개봉년도</td>
+            <td>
+                <input type="text" th:value="${movie.releasedYear}" class="form-control" disabled>
+            </td>
+            <td align="center" width="15%">영화 등급</td>
+            <td>
+                <input type="text" th:value="${movie.rating}" class="form-control" disabled>
+            </td>
+            <td width="10%">평점</td>
+            <td width="15%">
+                <input type="text" th:value="${avgRating}" class="form-control" disabled>
+            </td>
+        </tr>
+
+    </table>
+
+    <form th:action="@{/movie/view/{id}/add-review(id=${movie.id})}" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <td class="form-group">
+                    <label for="rating">평점</label>
+                    <select class="form-control" id="rating" name="rating" required>
+                        <option value="5">5</option>
+                        <option value="4.5">4.5</option>
+                        <option value="4">4</option>
+                        <option value="3.5">3.5</option>
+                        <option value="3">3</option>
+                        <option value="2.5">2.5</option>
+                        <option value="2">2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="1">1</option>
+                        <option value="0.5">0.5</option>
+                    </select>
+                </td>
+                <td th:if="${session.loggedInUser != null && session.loggedInUser.role == 2}">
+                    <label for="comment">평론</label>
+                    <textarea rows="3" id="comment" name="comment" class="form-control"
+                              style="resize: none;"></textarea>
+                    <button type="submit" class="btn btn-primary" style="margin-top:10px;">작성 완료</button>
+                </td>
+                <td th:unless="${session.loggedInUser != null && session.loggedInUser.role == 2}">
+                    <label for="comment">평론</label>
+                    <textarea rows="3" id="comment" name="comment" class="form-control" style="resize: none;"
+                              disabled></textarea>
+                    <button type="submit" class="btn btn-primary" style="margin-top:10px;">작성 완료</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form>
+        <table class="table table-bordered">
+            <tr align="center">
+                <th>작성자</th>
+                <th>평점</th>
+                <th>평론</th>
+                <th>관리</th>
+            </tr>
+            <tr th:if="${reviewList.isEmpty()}">
+                <td align="center" colspan="4">해당 영화에는 리뷰가 없습니다.</td>
+            </tr>
+            <tr th:unless="${reviewList.isEmpty()}" th:each="review : ${reviewList}" align="center">
+                <td th:text="${review.user.nickname}"></td>
+                <td th:switch="${session.loggedInUser != null && session.loggedInUser.id == review.user.id}">
+                    <div th:case="true">
+                        <select class="form-control" name="rating" required>
+                            <option th:selected="${review.rating == 5}" value="5">5</option>
+                            <option th:selected="${review.rating == 4.5}" value="4.5">4.5</option>
+                            <option th:selected="${review.rating == 4}" value="4">4</option>
+                            <option th:selected="${review.rating == 3.5}" value="3.5">3.5</option>
+                            <option th:selected="${review.rating == 3}" value="3">3</option>
+                            <option th:selected="${review.rating == 2.5}" value="2.5">2.5</option>
+                            <option th:selected="${review.rating == 2}" value="2">2</option>
+                            <option th:selected="${review.rating == 1.5}" value="1.5">1.5</option>
+                            <option th:selected="${review.rating == 1}" value="1">1</option>
+                            <option th:selected="${review.rating == 0.5}" value="0.5">0.5</option>
+                        </select>
+                    </div>
+                    <div th:case="false" th:text="${review.rating}"></div>
+                </td>
+                <td>
+                    <textarea class="form-control" style="resize:none" disabled>[[${review.comment}]]</textarea>
+                </td>
+                <td align="center">
+                    <button type="submit"
+                            th:formaction="@{/movie/view/{movieId}/edit-review/{reviewId}(movieId=${movie.id}, reviewId=${review.id})}"
+                            formmethod="post" class="btn btn-primary btn-sm">수정
+                    </button>
+                    <button type="submit"
+                            th:formaction="@{/movie/view/{movieId}/delete-review/{reviewId}(movieId=${movie.id}, reviewId=${review.id})}"
+                            formmethod="post" class="btn btn-danger btn-sm">삭제
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
