@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Movie List</title>
 </head>
 <body>
-
+<div th:replace="navbar.html"></div>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Movie List</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr align="center">
+            <th>번호</th>
+            <th>제목</th>
+            <th>감독</th>
+            <th>줄거리</th>
+            <th>개봉년도</th>
+            <th>등급</th>
+            <th th:if="${session.loggedInUser != null && session.loggedInUser.role == 1}">관리</th>
+        </tr>
+        </thead>
+        <tbody th:if="${movieList.isEmpty()}">
+        <tr>
+            <td colspan="5">
+                <p class="text-center"><b><span style="font-size: 9pt">등록된 영화가 없습니다.</span></b></p>
+            </td>
+        </tr>
+        </tbody>
+        <tbody th:unless="${movieList.isEmpty()}">
+        <tr th:each="movie : ${movieList}" align="center">
+            <td th:text="${movie.id}"></td>
+            <td th:text="${movie.title}"></td>
+            <td th:text="${movie.director}"></td>
+            <td th:text="${movie.summary}"></td>
+            <td th:text="${movie.releasedYear}"></td>
+            <td th:text="${movie.rating}"></td>
+            <td th:if="${session.loggedInUser != null && session.loggedInUser.role == 1}">
+                <a th:href="@{/edit/${movie.id}}" class="btn btn-warning btn-sm">수정</a>
+                <a th:href="@{/delete/${movie.id}}" class="btn btn-danger btn-sm">삭제</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

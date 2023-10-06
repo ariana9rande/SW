@@ -13,6 +13,9 @@ public class Movie
     private Long id;
 
     @Column(length = 50, nullable = false)
+    private String director;
+
+    @Column(length = 50, nullable = false)
     private String title;
 
     @Column(length = 200, nullable = false)
@@ -20,4 +23,7 @@ public class Movie
 
     @Column(length = 10, nullable = false)
     private String rating;
+
+    @Column(length = 5, nullable = false)
+    private String releasedYear;
 }

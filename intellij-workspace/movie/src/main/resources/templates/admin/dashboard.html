@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Index</title>
 </head>
 <body>
+<div th:replace="navbar.html"></div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><a class="btn btn-primary btn-lg btn-block" th:href="@{/movie/add}">영화 등록</a></h5>
+                </div>
+            </div>
+        </div>
+<!--        <div class="col-md-4">-->
+<!--            <div class="card text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"><a class="btn btn-success btn-lg btn-block" th:href="@{/user/sign-in}">영화 수정</a></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="card text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"><a class="btn btn-info btn-lg btn-block" th:href="@{/movie/list}">영화 삭제</a></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+    <br><br>
 
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><a class="btn btn-success btn-lg btn-block" th:href="@{/user/sign-up}">극장 등록</a></h5>
+                </div>
+            </div>
+        </div>
+<!--        <div class="col-md-4">-->
+<!--            <div class="card text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"><a class="btn btn-success btn-lg btn-block" th:href="@{/user/sign-in}">극장 수정</a></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="card text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"><a class="btn btn-info btn-lg btn-block" th:href="@{/movie/list}">극장 삭제</a></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+    <br><br>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><a class="btn btn-info btn-lg btn-block" th:href="@{/user/sign-up}">상영정보 등록</a></h5>
+                </div>
+            </div>
+        </div>
+<!--        <div class="col-md-4">-->
+<!--            <div class="card text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"><a class="btn btn-success btn-lg btn-block" th:href="@{/user/sign-in}">상영정보 수정</a></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="card text-center">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"><a class="btn btn-info btn-lg btn-block" th:href="@{/movie/list}">상영정보 삭제</a></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
