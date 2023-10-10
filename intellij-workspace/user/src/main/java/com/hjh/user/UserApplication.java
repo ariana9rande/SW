@@ -6,9 +6,11 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
 
@@ -16,6 +18,13 @@ import javax.sql.DataSource;
 @SpringBootApplication
 public class UserApplication
 {
+    @LoadBalanced
+    @Bean
+    public RestTemplate getRestTemplate()
+    {
+        return new RestTemplate();
+    }
+
     @Bean(name = "sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource,
                                                ApplicationContext applicationContext)
@@ -24,7 +33,7 @@ public class UserApplication
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setConfigLocation(new PathMatchingResourcePatternResolver().getResource("classpath:/mybatis/config.xml"));
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResource("classpath:/mybatis/mapper/*.xml"));
+        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:/mybatis/mapper/*.xml"));
 
         return sqlSessionFactoryBean.getObject();
     }
