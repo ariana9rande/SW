@@ -8,9 +8,7 @@ import com.hjh.board.model.BoardDTO;
 import com.hjh.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -42,7 +40,6 @@ public class BoardController
     {
         BoardDTO boardDTO = boardService.selectOne(id);
         JsonObject resultObject = new JsonObject();
-        Gson gson = new Gson();
 
         resultObject.addProperty("id", boardDTO.getId());
         resultObject.addProperty("writerId", boardDTO.getWriterId());
@@ -52,5 +49,16 @@ public class BoardController
         resultObject.addProperty("modifyDate", String.valueOf(boardDTO.getModifyDate()));
 
         return resultObject.toString();
+    }
+
+    @PostMapping("/write")
+    public String write(@RequestBody BoardDTO boardDTO)
+    {
+        System.out.println("before insert: " + boardDTO);
+
+        boardService.insert(boardDTO);
+        System.out.println("after insert: " + boardDTO);
+
+        return "board.BoardController.write()";
     }
 }

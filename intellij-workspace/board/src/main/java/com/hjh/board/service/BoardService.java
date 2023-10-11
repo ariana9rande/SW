@@ -24,4 +24,9 @@ public class BoardService
     {
         return sqlSession.selectOne(NAMESPACE + ".selectOne", id);
     }
+
+    public void insert(BoardDTO boardDTO)
+    {
+        sqlSession.insert(NAMESPACE + ".insert", boardDTO);
+    }
 }

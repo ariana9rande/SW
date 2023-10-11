@@ -9,4 +9,9 @@
         select * from board
         where id = #{id}
     </select>
+
+    <insert id="insert" parameterType="board" useGeneratedKeys="true" keyProperty="id">
+        insert into board(title, content, writer_id, entry_date, modify_date)
+        values (#{title}, #{content}, #{writerId}, NOW(), NOW())
+    </insert>
 </mapper>

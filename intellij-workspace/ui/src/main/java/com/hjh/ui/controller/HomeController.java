@@ -3,6 +3,7 @@ package com.hjh.ui.controller;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -25,7 +26,7 @@ public class HomeController
     }
 
     @PostMapping("/auth")
-    public String sendAuthRequest(String username, String password)
+    public String sendAuthRequest(String username, String password, HttpSession session)
     {
         JsonObject object = new JsonObject();
         object.addProperty("username", username);
@@ -45,7 +46,10 @@ public class HomeController
         if(resultObject.has("result"))
             return "redirect:/";
         else
-            return "redirect:/board/showAll";
+        {
+            session.setAttribute("loginId", resultObject.get("id"));
 
+            return "redirect:/board/showAll";
+        }
     }
 }
