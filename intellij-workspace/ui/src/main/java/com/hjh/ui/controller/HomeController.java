@@ -42,8 +42,6 @@ public class HomeController
         JsonElement jsonElement = JsonParser.parseString(result);
         JsonObject resultObject = jsonElement.getAsJsonObject();
 
-        System.out.println("jsonElement = " + jsonElement);
-
         if(resultObject.has("result"))
             return "redirect:/";
         else

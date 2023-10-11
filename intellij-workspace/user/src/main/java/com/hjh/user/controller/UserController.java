@@ -31,11 +31,7 @@ public class UserController
     @PostMapping("/auth")
     public String auth(@RequestBody UserDTO attempt)
     {
-        System.out.println("attempt = " + attempt);
-
         UserDTO result = USER_SERVICE.auth(attempt);
-
-        System.out.println("result = " + result);
 
         if(result != null)
         {
