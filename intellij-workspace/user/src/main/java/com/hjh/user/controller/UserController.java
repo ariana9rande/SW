@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,24 +29,25 @@ public class UserController
     }
 
     @PostMapping("/auth")
-    public String auth(Map<String, String> paramMap)
+    public String auth(@RequestBody UserDTO attempt)
     {
-        System.out.println("paramMap = " + paramMap);
-//        UserDTO result = USER_SERVICE.auth(userDTO);
-//        if(result != null)
-//        {
-//            Gson gson = new Gson();
-//            return gson.toJson(result);
-//        }
-//        else
-//        {
-//            JsonObject object = new JsonObject();
-//            object.addProperty("result", "fail");
-//
-//            return object.toString();
-//        }
-        System.out.println(restTemplate.exchange("http://main/test", HttpMethod.GET, null, String.class).getBody());
+        System.out.println("attempt = " + attempt);
 
-        return "test";
+        UserDTO result = USER_SERVICE.auth(attempt);
+
+        System.out.println("result = " + result);
+
+        if(result != null)
+        {
+            Gson gson = new Gson();
+            return gson.toJson(result);
+        }
+        else
+        {
+            JsonObject object = new JsonObject();
+            object.addProperty("result", "fail");
+
+            return object.toString();
+        }
     }
 }

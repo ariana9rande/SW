@@ -1,14 +1,16 @@
 package com.hjh.ui.controller;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 public class HomeController
@@ -25,12 +27,27 @@ public class HomeController
     @PostMapping("/auth")
     public String sendAuthRequest(String username, String password)
     {
-        Map<String, String> paramMap = new HashMap<>();
-        paramMap.put("username", username);
-        paramMap.put("password", password);
+        JsonObject object = new JsonObject();
+        object.addProperty("username", username);
+        object.addProperty("password", password);
 
-        restTemplate.exchange("http://user/auth", HttpMethod.POST, null, String.class, paramMap);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return "index";
+        HttpEntity<String> request = new HttpEntity<>(object.toString(), headers);
+
+//        restTemplate.exchange("http://user/auth", HttpMethod.POST, request, String.class, multiValueMap);
+        String result = restTemplate.postForObject("http://user/auth", request, String.class);
+
+        JsonElement jsonElement = JsonParser.parseString(result);
+        JsonObject resultObject = jsonElement.getAsJsonObject();
+
+        System.out.println("jsonElement = " + jsonElement);
+
+        if(resultObject.has("result"))
+            return "redirect:/";
+        else
+            return "redirect:/board/showAll";
+
     }
 }

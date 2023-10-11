@@ -20,6 +20,6 @@ public class UserService
 
     public UserDTO auth(UserDTO attempt)
     {
-        return SESSION.selectOne(NAMESPACE + ".auth", attempt);
+        return SESSION.selectOne("auth", attempt);
     }
 }

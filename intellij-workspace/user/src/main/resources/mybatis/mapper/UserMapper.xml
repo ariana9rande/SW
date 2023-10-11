@@ -3,7 +3,7 @@
 <mapper namespace="com.sku.mapper.UserMapper">
     <select id="auth" parameterType="user" resultType="user">
         select * from user
-        where id = #{id}
+        where username = #{username}
         and password = #{password}
     </select>
 </mapper>
