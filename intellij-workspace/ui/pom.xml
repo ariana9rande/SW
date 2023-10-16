@@ -15,6 +15,7 @@
 	<description>UI Service Provider</description>
 	<properties>
 		<java.version>17</java.version>
+		<packaging>war</packaging>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>
 	</properties>
 	<dependencies>
