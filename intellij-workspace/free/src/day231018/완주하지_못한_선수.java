@@ -19,22 +19,25 @@ public class 완주하지_못한_선수
         for(String c : completion)
             completion2.add(c);
 
-        for(int i = 0; i < completion2.size(); i++)
-        {
-            for(int j = 0; j < participant2.size(); j++)
-            {
-                if(participant2.get(j).equals(completion2.get(i)))
-                {
-                    // System.out.println(i + " " + j);
-                    // System.out.println("c = " + completion2);
-                    // System.out.println("p = " + participant2);
-                    completion2.remove(completion2.get(i));
-                    participant2.remove(participant2.get(j));
-                    i--;
-                    break;
-                }
-            }
-        }
+//        for(int i = 0; i < completion2.size(); i++)
+//        {
+//            for(int j = 0; j < participant2.size(); j++)
+//            {
+//                if(participant2.get(j).equals(completion2.get(i)))
+//                {
+//                    // System.out.println(i + " " + j);
+//                    // System.out.println("c = " + completion2);
+//                    // System.out.println("p = " + participant2);
+//                    completion2.remove(completion2.get(i));
+//                    participant2.remove(participant2.get(j));
+//                    i--;
+//                    break;
+//                }
+//            }
+//        }
+
+        for(String c : completion2)
+            participant2.remove(c);
 
         return participant2.get(0);
     }
