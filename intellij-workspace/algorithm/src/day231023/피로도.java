@@ -7,12 +7,16 @@ import java.util.Arrays;
 public class 피로도
 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-    public static int perm(int k, int[][] dungeons, String[] sel, int[] check, int cnt, int depth)
+    static int answer = -1;
+    
+    public static void perm(int k, int[][] dungeons, String[] sel, int[] check, int depth)
     {
+        if(depth > answer)
+            answer = depth;
+
         if(depth == dungeons.length)
         {
-            return -1;
+            return;
         }
 
         for(int i = 0; i < dungeons.length; i++)
@@ -20,20 +24,17 @@ public class 피로도
             if(check[i] == 0 && dungeons[i][0] <= k)
             {
                 check[i] = 1;
-                cnt++;
                 sel[depth] = Arrays.toString(dungeons[i]);
                 k -= dungeons[i][1];
-                perm(k, dungeons, sel, check, cnt,depth + 1);
+                perm(k, dungeons, sel, check, depth + 1);
 
                 System.out.println("sel = " + Arrays.toString(sel));
                 System.out.print("k = " + k);
-                System.out.print(" cnt = " + cnt);
                 System.out.println(" depth = " + depth);
                 check[i] = 0;
                 k += dungeons[i][1];
             }
         }
-        return cnt;
     }
 
     public static int solution(int k, int[][] dungeons)
@@ -41,7 +42,7 @@ public class 피로도
         String[] sel = new String[dungeons.length];
         int[] check = new int[dungeons.length];
         int cnt = 0;
-        int answer = perm(k, dungeons, sel, check, cnt, 0);
+        perm(k, dungeons, sel, check, 0);
 
         for(String item : sel)
             if(item != null)
@@ -64,5 +65,6 @@ public class 피로도
         };
 
         System.out.println(solution(k, dungeons));
+        System.out.println("answer = " + answer);
     }
 }
