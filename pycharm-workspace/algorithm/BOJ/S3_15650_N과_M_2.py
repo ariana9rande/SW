@@ -14,13 +14,9 @@ def combi(idx, sidx):
         print()
         return
 
-    if idx == n:
-        return
-
-    sel[sidx] = idx + 1
-
-    combi(idx + 1, sidx + 1)
-    combi(idx + 1, sidx)
+    for i in range(idx, n):
+        sel[sidx] = i + 1
+        combi(i + 1, sidx + 1)
 
 
 combi(0, 0)
